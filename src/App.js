@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 
 // Páginas
 import Home from './pages/Home';
+import Header from './components/Header/Header';
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
 import Carrinho from './pages/Carrinho';
@@ -14,6 +15,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <Header/>
       <Routes>
         <Route exact path="/" element={<Home/>} />
         <Route exact path="/login" element={<Login/>} />

@@ -1,0 +1,45 @@
+$azul-900:#05f2c7;
+$azul-450: #a0f2db;
+$azul-100: #c2f2e9;
+
+$cinza-900:#05f2c7;
+$cinza-450: #757575;
+$preto: #0d0d0d;
+
+/* PESQUISA */
+
+.pesquisar {
+    width: 100%;
+    padding: 10px;
+    color: #ddd;
+    border: 1px solid whitesmoke;
+    border-radius: 15px;
+    font-weight: 500;
+}
+
+.pesquisar:hover {
+    border: 1px solid white;
+}
+
+.lupa {
+        background: none;
+        color: $preto;
+        border: none;
+        position: relative;
+        left: -30px;
+}
+
+/* BOTOES */
+
+.cadastre-se {
+        max-width: 150px;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        background: transparent;
+        border: none;
+}
+
+.fa-user-plus {
+        font-size: 2em !important;
+}
