@@ -20,5 +20,6 @@
 
 body {
   font-family: var(--ff-cabin);
+  color: var(--clr-cinza-800);
   line-height: 1.5;
 }
