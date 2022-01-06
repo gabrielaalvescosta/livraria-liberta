@@ -1,3 +1,5 @@
+// STYLES.JS 
+
 import styled from 'styled-components';
 
 export const Container = styled.div `
@@ -13,6 +15,7 @@ export const Wrapper = styled.div `
     width: 75vw;
     align-items: center;
     justify-content: center;
+    
 
     @media(max-width: 768px) {
         width:100vw;
@@ -35,7 +38,7 @@ export const Left = styled.div `
       }
 `
 export const Center = styled.div `
-    flex: 3;
+    flex: 4;
   
 `
 export const Botoes = styled.div `

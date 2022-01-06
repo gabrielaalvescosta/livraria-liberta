@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Readex+Pro:wght@200;400;500;700&display=swap');
 
 :root {
 
@@ -11,7 +12,7 @@
 
   --mq-mobile: 768px;
   --mq-tablet: 1010px;
-  
+  --ff-fonte: 'Readex Pro', sans-serif;
 }
 
 *,
@@ -20,6 +21,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+
+body {
+  color: var(--clr-cinza-800);
+  line-height: 1.5;
+  font-family: 'Readex Pro', sans-serif;
+  font-weight: 500;
 }
 
 html, div, span, applet, object, iframe,
@@ -64,13 +73,7 @@ table {
 	border-spacing: 0;
 }
 
-body {
-  font-family: var(--ff-fonte);
-  color: var(--clr-cinza-800);
-  line-height: 1.5;
-  font-family: Cabin, sans-serif;
-  font-weight: 500;
-}
+
 
 a {
     color: var(--clr-preto);

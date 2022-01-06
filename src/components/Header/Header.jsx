@@ -3,6 +3,9 @@ import { NavLink } from 'react-router-dom';
 import Logo from "../../assets/Logo";
 import { Container, Wrapper, Left, Center, Botoes } from './styles'
 import './header.scss'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUserCircle, faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
+
 
 export default function Header() {
  
@@ -16,19 +19,19 @@ export default function Header() {
     <Center>
     <form className="formulario">
     <input className="pesquisar" type="search" placeholder="O que você procura?" aria-label="Search"/>
-    <button className="lupa" type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
+    <button className="lupa" type="submit"><FontAwesomeIcon icon={faSearch} /></button>
     </form>
     </Center>
 
 
     <Botoes>
     <button className="cadastre-se">
-    <NavLink to="/login"><i className="fa fa-user-plus me-1"></i></NavLink>
+    <NavLink to="/login"><FontAwesomeIcon icon={faUserCircle} className="fa-user" /></NavLink>
       <NavLink to="/login" className="link-cadastre">Entre ou Cadastre-se</NavLink> 
     </button>
     <button className="cadastre-se">
-    <NavLink to="/carrinho"><i className="fa fa-shopping-cart me-1"></i> </NavLink>
-    <NavLink to="/carrinho">(0)</NavLink>
+    <NavLink to="/carrinho"><FontAwesomeIcon icon={faShoppingCart} className="fa-cart" /></NavLink>
+    <NavLink to="/carrinho" className="carrinho-cont">0</NavLink>
     </button>
     </Botoes>
 

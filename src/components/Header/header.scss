@@ -1,3 +1,5 @@
+/* HEADER.SCSS */
+
 
 /* PESQUISA */
 
@@ -12,6 +14,7 @@
     border: 1px solid whitesmoke;
     border-radius: 15px;
     font-weight: 500;
+    font-family: var(--ff-fonte);
 }
 
 .pesquisar:hover {
@@ -33,26 +36,42 @@
 .cadastre-se {
         max-width: 120px;
         display: flex;
+        font-family: var(--ff-fonte);
         align-items: center;
         text-align: left;
         background: transparent;
         border: none;
 }
 
-.fa-user-plus, .fa-shopping-cart {
+.fa-user, .fa-cart {
         font-size: 2em !important;
         margin: 0.5rem;
 }
 
-/* MEDIA */
+/* CARRINHO */
 
-@media(max-width: 768px) {
+.carrinho-cont {
+        border-radius: 50%;
+        padding: 5px;
+        width: 24px;
+        text-align: center;
+        font-size: 0.9em;
+        font-family: var(--ff-fonte);
+        font-weight: bold;
+        background: #d6fff3;
+        color: var(--clr-preto);
+}
+
+/* MEDIA QUERIES */
+
+@media(max-width: 1490px) {
         a.link-cadastre {
                 display:none;
         }
 
         .iberta {
                 display: none;
+                max-width: 60px;
               }
 
       }
