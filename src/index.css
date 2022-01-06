@@ -23,12 +23,16 @@
   box-sizing: border-box;
 }
 
+::selection{background: var(--clr-azul-450); color: var(--clr-preto);}
+::-moz-selection{background: var(--clr-azul-450); color: var(--clr-preto);}
+
 
 body {
   color: var(--clr-cinza-800);
   line-height: 1.5;
   font-family: 'Readex Pro', sans-serif;
   font-weight: 500;
+  background: var(--clr-cinza-100);
 }
 
 html, div, span, applet, object, iframe,
@@ -49,6 +53,8 @@ time, mark, audio, video {
 	border: 0;
   text-decoration: none;
 }
+
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -72,7 +78,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
 
 
 a {
