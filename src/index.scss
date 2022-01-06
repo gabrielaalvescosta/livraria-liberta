@@ -1,5 +1,5 @@
+
 :root {
-  --ff-cabin: Cabin, sans-serif;
 
   --clr-azul-900: #05f2c7;
   --clr-azul-450: #a0f2db;
@@ -8,6 +8,10 @@
   --clr-cinza-100: #efefef;
   --clr-cinza-800: #757575;
   --clr-preto: #0d0d0d;
+
+  --mq-mobile: 768px;
+  --mq-tablet: 1010px;
+  
 }
 
 *,
@@ -61,7 +65,14 @@ table {
 }
 
 body {
-  font-family: var(--ff-cabin);
+  font-family: var(--ff-fonte);
   color: var(--clr-cinza-800);
   line-height: 1.5;
+  font-family: Cabin, sans-serif;
+  font-weight: 500;
+}
+
+a {
+    color: var(--clr-preto);
+    text-decoration: none;
 }

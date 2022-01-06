@@ -1,11 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Logo from "../../assets/Logo";
-import { Container, Wrapper, Left, Center, Pesquisa, Botoes } from './styles'
+import { Container, Wrapper, Left, Center, Botoes } from './styles'
 import './header.scss'
 
 export default function Header() {
-
  
     return (
         <Container>
@@ -15,7 +14,7 @@ export default function Header() {
     </Left>
 
     <Center>
-    <form className="d-flex">
+    <form className="formulario">
     <input className="pesquisar" type="search" placeholder="O que você procura?" aria-label="Search"/>
     <button className="lupa" type="submit"><i className="fa fa-search" aria-hidden="true"></i></button>
     </form>
@@ -24,10 +23,13 @@ export default function Header() {
 
     <Botoes>
     <button className="cadastre-se">
-    <i className="fa fa-user-plus me-1"></i>
-      <NavLink to="/login">Entre ou Cadastre-se</NavLink> 
+    <NavLink to="/login"><i className="fa fa-user-plus me-1"></i></NavLink>
+      <NavLink to="/login" className="link-cadastre">Entre ou Cadastre-se</NavLink> 
     </button>
-    <NavLink to="/carrinho"> <i className="fa fa-shopping-cart me-1"></i> Carrinho (0)</NavLink>
+    <button className="cadastre-se">
+    <NavLink to="/carrinho"><i className="fa fa-shopping-cart me-1"></i> </NavLink>
+    <NavLink to="/carrinho">(0)</NavLink>
+    </button>
     </Botoes>
 
           </Wrapper>

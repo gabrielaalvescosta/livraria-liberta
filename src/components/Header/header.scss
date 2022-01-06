@@ -1,17 +1,14 @@
-$azul-900:#05f2c7;
-$azul-450: #a0f2db;
-$azul-100: #c2f2e9;
-
-$cinza-900:#05f2c7;
-$cinza-450: #757575;
-$preto: #0d0d0d;
 
 /* PESQUISA */
 
+.d-flex, .formulario {
+        display: flex;
+}
+
 .pesquisar {
     width: 100%;
-    padding: 10px;
-    color: #ddd;
+    padding: 10px 15px;
+    color: #999;
     border: 1px solid whitesmoke;
     border-radius: 15px;
     font-weight: 500;
@@ -23,16 +20,18 @@ $preto: #0d0d0d;
 
 .lupa {
         background: none;
-        color: $preto;
+        color: var(--clr-preto);
         border: none;
         position: relative;
         left: -30px;
 }
 
+
+
 /* BOTOES */
 
 .cadastre-se {
-        max-width: 150px;
+        max-width: 120px;
         display: flex;
         align-items: center;
         text-align: left;
@@ -40,6 +39,20 @@ $preto: #0d0d0d;
         border: none;
 }
 
-.fa-user-plus {
+.fa-user-plus, .fa-shopping-cart {
         font-size: 2em !important;
+        margin: 0.5rem;
 }
+
+/* MEDIA */
+
+@media(max-width: 768px) {
+        a.link-cadastre {
+                display:none;
+        }
+
+        .iberta {
+                display: none;
+              }
+
+      }
