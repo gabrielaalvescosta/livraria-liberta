@@ -9,6 +9,7 @@ import Carrinho from './pages/Carrinho';
 import Produto from './pages/Produto';
 import Pesquisa from './pages/Pesquisa';
 import Dashboard from './pages/Dashboard';
+import Footer from './components/Footer/Footer';
 
 import './App.css';
 
@@ -25,6 +26,7 @@ function App() {
         <Route exact path="/pesquisa" element={<Pesquisa/>} />
         <Route exact path="/cadastro" element={<Cadastro/>} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
