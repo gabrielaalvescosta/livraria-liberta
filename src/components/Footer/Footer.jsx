@@ -59,7 +59,9 @@ export default function Footer() {
                             </p>
                         </article>
                         <div className="informacoes-de-redes">
-
+                            <img src={"image/ant-design_facebook-filled.png"} alt="imagem da rede social facebook"/>
+                            <img src={"image/ant-design_twitter-outlined.png"} alt="imagem da rede social twitter"/>
+                            <img src={"image/ant-design_linkedin-filled.png"} alt="imagem da rede social instagram"/>
                         </div>
                     </div>
                 </section>
