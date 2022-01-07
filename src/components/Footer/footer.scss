@@ -1,0 +1,80 @@
+.body-footera{
+    background-color: white;
+    
+}
+
+.pagamento-seguranca, .bandeira-cartoes, .verificacao-do-site, .navbar-footer nav, .navbar-footer nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #efefef;
+    color: #757575;
+}
+
+.pagamento-seguranca{
+    align-items: flex-start;
+    padding: 3% 10% 3% 10%;
+}
+
+.pagamento {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pagamento h4, .seguranca h4{
+    text-transform: uppercase;
+    padding: 0px 7px 0px 7px;
+}
+
+.bandeira-cartoes{
+    width: 250px;
+    flex-wrap: wrap;
+}
+
+.bandeira-cartoes img{
+    width: 50px;
+    padding: 0px 7px 0px 7px;
+}
+
+.selos-do-site{
+    width: 260px;
+}
+
+.verificacao-do-site .verificacao-do-site-II{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.verificacao-do-site img, .verificacao-do-site div img{
+    width: 70px;
+}
+
+.informacoes-juridicas-e-redes{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-footer nav{
+    background-color: #a0f2db;
+    padding: 2% 0% 2% 0%;
+}
+
+.navbar-footer nav ul{
+    background-color: #a0f2db;
+    width: 60%;
+}
+
+.navbar-footer li{
+    color: #757575;
+    text-transform: uppercase;
+}
+
+.rodape{
+    background-color: #c2f2e9;
+    color: #757575;
+}
