@@ -10,7 +10,12 @@ export default function Footer() {
                         Pagamento
                     </h4>
                     <div className="bandeira-cartoes">
-
+                        <img src={"image/logo-visa.png"} alt="logo da bandeira do cartão visa"/>
+                        <img src={"image/mastercard.png"} alt="logo da bandeira do cartão mastercard"/>
+                        <img src={"image/elo.png"} alt="logo da bandeira do cartão elo"/>
+                        <img src={"image/cartao-hiper.png"} alt="logo da bandeira do cartão hiper"/>
+                        <img src={"image/hipercard.png"} alt="logo da bandeira do cartão hipercard"/>
+                        <img src={"image/paypal.png"} alt="logo da bandeira paypal"/>
                     </div>
                 </section>
                 <section className="pagamento">
