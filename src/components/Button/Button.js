@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-export const ButtonP = styled.button `
+export const Button = styled.button `
         padding: 1.5em 3em;
         width: 100%;
         text-align: center;
@@ -13,25 +13,9 @@ export const ButtonP = styled.button `
         font-size: 1em;
         font-family: 'Readex Pro', sans-serif;
 
-        a {
-            color: white;
-        }
-`
-
-export const ButtonA = styled.button `
-        padding: 1.5em 3em;
-        width: 100%;
-        text-align: center;
-        text-transform: uppercase;
+    
+        ${props => props.azul && css`
         background: #00EAD5;
-        color: white;
-        border-radius: 1.25em; 
-        border: none;
-        font-size: 1em;
-        margin: 1em 0;
-        font-family: 'Readex Pro', sans-serif;
-
-        a {
-            color: white;
-        }
+        `}
+        
 `
