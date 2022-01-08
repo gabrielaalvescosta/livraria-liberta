@@ -1,37 +1,35 @@
 .slideshow {
-    position: relative;
+    background: var(--clr-cinza-800);
   }
   
-  .imagens {
+  .imagens  {
     transition: all 500ms;
+    width: 100vw;
+    max-height: 50vh;
   }
   
   .acoes {
     position: absolute;
-    top: 50%;
+    top: 30vh;
     width: 100%;
     display: flex;
     justify-content: space-between;
   }
   
   .acoes button {
-    background: #0000003d;
+    background: #ababab96;
     border: none;
     cursor: pointer;
+    width: 50px;
     padding: 10px;
-    padding-top: 10px;
-    margin: 5px;
-    border-radius: 15px;
-    padding-top: 5px;
+    color: #efefef;
+    height: 50px;
+    margin: 1em;
+    border-radius: 2em;
+
+    &:active {
+        background: #c7d7d247;
+        transition: all 500ms;
+      }
   }
   
-  .acoes button:active {
-    background: #000000a2;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    padding-top: 10px;
-    margin: 5px;
-    border-radius: 15px;
-    padding-top: 5px;
-  }
