@@ -10,6 +10,11 @@
     flex-direction: column;
     justify-content: space-between;
     justify-self: end;
+    transition: box-shadow 0.5s;
+
+    &:hover {
+      box-shadow: 9px 5px 20px 0px #e5e5e5;
+    }
 
 
     @media(max-width: 1490px) {
@@ -45,6 +50,10 @@
     
 }
 
+.entrar button.a {
+    color: white;
+}
+
 .entrar h2 {
     font-size: 1.9em;
     font-weight: bold;
@@ -69,4 +78,11 @@
     width: 100%;
     font: inherit;
     margin: 0 0 0.75em 0;
+}
+
+/* CADASTRO */
+
+.cadastro-senha {
+    display: flex;
+    justify-content: space-between;
 }
