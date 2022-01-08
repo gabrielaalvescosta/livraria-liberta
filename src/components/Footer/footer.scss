@@ -78,3 +78,23 @@
     background-color: #c2f2e9;
     color: #757575;
 }
+
+@media(max-width: 700px) {
+    .pagamento-seguranca{
+        flex-direction: column;
+        align-items: center;
+        padding:1% 1% 7% 1%;
+    }
+    .navbar-footer nav, .navbar-footer nav ul{
+        flex-direction: column;
+        justify-content: space-around;
+        padding: initial;
+        height: 300px;
+    }
+    .informacoes-juridicas-e-redes{
+        align-items: center;
+    }
+    .informacoes-juridicas{
+        width: 70%;
+    }
+}
