@@ -1,6 +1,6 @@
 import React from 'react';
 import { Input, LabelInput } from '../components/Input/Input';
-import { Button } from '../components/Button/button';
+import { Button } from '../components/Button/Button';
 import { BoxCadastro } from '../components/SignIn/styles';
 import { Main } from '../components/Main/styles';
 import { Titulo, Barra } from '../components/Headings/styles';

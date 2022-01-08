@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { BoxLogin } from './styles';
-import { Button, ButtonLink } from '../Button/button';
+import { Button, ButtonLink } from '../Button/Button';
 import { Subtitulo, Titulo } from '../Headings/styles';
 
 import './signin.scss'
