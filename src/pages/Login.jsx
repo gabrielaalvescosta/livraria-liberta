@@ -6,7 +6,7 @@ import { Titulo, Barra } from '../components/Headings/styles';
 function Login() {
   return (
     <Main>
-      <Titulo>Compre já!</Titulo>
+      <Titulo>Login</Titulo>
       <Barra/>
       <SignIn/>
     </Main>
