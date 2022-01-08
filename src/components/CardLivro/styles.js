@@ -10,8 +10,11 @@ export const StyledCardLivro = styled.figure`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 30px 40px;
-  width: 17.5rem; // 280px
+  justify-content: center;
+  flex: none;
+  padding: 1.875rem;
+  margin: 0 1rem;
+  width: 16.25rem;
   text-align: center;
   box-shadow: 5px 5px 10px 0 var(--clr-card);
   border: var(--common-border);
@@ -19,27 +22,31 @@ export const StyledCardLivro = styled.figure`
 
   img {
     display: block;
-    max-width: 100%;
+    width: 100%;
     height: 17.5rem;
     border-radius: var(--common-radius);
     border: var(--common-border);
   }
 
   figcaption {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
     width: 100%;
+    height: 200px;
 
     h3 {
       display: -webkit-box;
-      margin-top: 2.5em;
       font-size: .9rem;
       -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
+      margin-top: 2rem;
     }
 
     .preco {
-      margin-top: 1.5em;
       font-weight: 600;
       font-size: 1.125rem;
       color: var(--clr-preco);
@@ -49,11 +56,10 @@ export const StyledCardLivro = styled.figure`
 
 export const StyledCardButton = styled(Link)`
   --clr-border: #d9d9d9;
-
+  
   padding: 1.2em;
-  margin-top: 1.3em;
   width: 100%;
-  font-size: 1rem;
+  font-size: .9rem;
   text-align: center;
   text-transform: uppercase;
   color: var(--clr-cinza-800);

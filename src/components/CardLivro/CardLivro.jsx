@@ -13,10 +13,10 @@ function CardLivro({ livro }) {
           {livro.titulo}
         </h3>
         <p className="preco">{padronizaPreco(livro.preco)}</p>
+        <StyledCardButton to={`/produto/${livro.id_livro}`}>
+          Saiba mais
+        </StyledCardButton>
       </figcaption>
-      <StyledCardButton to={`/produto/${livro.id_livro}`}>
-        Saiba mais
-      </StyledCardButton>
     </StyledCardLivro>
   );
 }
