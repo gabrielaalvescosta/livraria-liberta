@@ -1,10 +1,13 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import Logo from "../../assets/Logo";
-import { Container, Wrapper, Left, Center, Botoes } from './styles'
-import './header.scss'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
+import Logo from "../../assets/Logo";
+
+import { Container, Wrapper, Left, Center, Botoes } from './styles'
+import './header.scss'
+
 
 
 export default function Header() {
