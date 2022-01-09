@@ -1,6 +1,8 @@
 import React from 'react';
 import './footer.scss'
 
+import Logo  from '../../assets/Logo';
+
 export default function Footer() {
  
     return (
@@ -37,7 +39,7 @@ export default function Footer() {
                 </section>
                 <section className="navbar-footer">
                     <nav>
-                        <img src={"image/logo.png"} alt="imagem do logo da livraria liberta"/>
+                        <Logo/>
                         <ul>
                             {Array.of("Home", "Quem somos", "sac", "política de privacidade", "termos de uso").map((aba)=>{
                                 return(
