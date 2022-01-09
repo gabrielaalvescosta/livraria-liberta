@@ -16,6 +16,11 @@ function CardLivro({ livro }) {
         <StyledCardButton to={`/produto/${livro.id_livro}`}>
           Saiba mais
         </StyledCardButton>
+
+        {/* BOTAO DE TESTE PARA O CARRINHO ABAIXO */}
+        <StyledCardButton to={`/produto/${livro.id_livro}`}>
+          Comprar
+        </StyledCardButton>
       </figcaption>
     </StyledCardLivro>
   );

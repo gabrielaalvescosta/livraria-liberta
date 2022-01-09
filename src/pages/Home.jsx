@@ -33,6 +33,7 @@ function Home() {
     return <h1>Carregando...</h1>;
   }
 
+
   return (
     <div>
     <Slideshow imgs={fotos} />

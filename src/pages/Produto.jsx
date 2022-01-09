@@ -1,11 +1,13 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import CardLivro from '../components/CardLivro/CardLivro';
 
-function Livro() {
+
+function Produto() {
   return (
     <div>
-      
+    PAGINA PRODUTO
     </div>
   )
 }
 
-export default Livro;
+export default Produto;

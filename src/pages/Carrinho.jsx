@@ -1,10 +1,14 @@
 import React from 'react'
+import Cart from '../components/Carrinho/Cart';
+import { Main } from '../components/Main/styles';
 
 function Carrinho() {
   return (
-    <div>
-      CARRINHO
-    </div>
+    <Main>
+      <Cart/>
+      
+    </Main>
+    
   )
 }
 

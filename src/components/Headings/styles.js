@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const Titulo = styled.h1 `
         font-size: 2.5em;
@@ -24,4 +24,9 @@ export const Barra = styled.div `
         margin: 0 auto;
         background: var(--clr-azul-450);
 
+        ${props => props.left && css`
+        margin: 1em 0;
+        `}
+
 `
+
