@@ -2,7 +2,7 @@
 import styled, { css } from 'styled-components';
 
 export const Input = styled.input `
-        -webkit-appearance: none;
+        -webkit-appearance: none !important;
         border-radius: 1em;
         padding: 1em 2em;
         border: 2px solid #ddd;
@@ -13,6 +13,7 @@ export const Input = styled.input `
 
             @media(max-width: 468px) {
                 font-size: 0.75em;
+                -webkit-appearance: none;
             }
 
         ${props => props.metade && css`

@@ -7,6 +7,8 @@ export const Container = styled.div `
     background: var(--clr-azul-450);
     display: flex;
     justify-content: center;
+    width: 100%;
+    z-index: 999;
 `
 
 export const Wrapper = styled.div `
