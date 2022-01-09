@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Carrossel from '../Carrossel/Carrossel';
+import Carrossel from '../components/Carrossel/Carrossel';
 import Slideshow from '../components/Slideshow/Slideshow';
 import { Titulo, Barra } from '../components/Headings/styles'
 import { buscaLivros } from '../services/livroApi';

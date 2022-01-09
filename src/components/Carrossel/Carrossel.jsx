@@ -1,6 +1,6 @@
 import React from 'react';
 
-import CardLivro from '../components/CardLivro/CardLivro';
+import CardLivro from '../CardLivro/CardLivro';
 
 import { StyledCarrosel } from './styles';
 
