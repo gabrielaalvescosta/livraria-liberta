@@ -34,7 +34,10 @@ const Slideshow = ( { imgs }) => {
 
     return (
         <div className="slideshow">
-        <img className="imagens" src={imgs[index]} />
+            <div className="imagens">
+            <img src={imgs[index]} />
+            </div>
+
         <div className="acoes">
           <button onClick={prev}><FontAwesomeIcon icon={faChevronLeft} /></button>
           <button onClick={next}><FontAwesomeIcon icon={faChevronRight} /></button>

@@ -1,16 +1,27 @@
 .slideshow {
     background: var(--clr-cinza-800);
+    height: 500px;
+    width:100vw;
   }
   
   .imagens  {
     transition: all 500ms;
-    width: 100vw;
-    max-height: 50vh;
+    height: 500px;
+    object-fit: cover;
   }
+
+  .imagens img {
+    transition: all 500ms;
+    width: 100%;
+    object-fit: cover;
+    height: 500px;
+    
+  }
+  
   
   .acoes {
     position: absolute;
-    top: 30vh;
+    top: 45%;
     width: 100%;
     display: flex;
     justify-content: space-between;
