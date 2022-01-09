@@ -10,7 +10,7 @@ import Produto from './pages/Produto';
 import Pesquisa from './pages/Pesquisa';
 import Dashboard from './pages/Dashboard';
 
-import './App.css';
+import './App.scss';
 
 function App() {
   return (
