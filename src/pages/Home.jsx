@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Carrossel from '../Carrossel/Carrossel';
 import Slideshow from '../components/Slideshow/Slideshow';
+import { Titulo, Barra } from '../components/Headings/styles'
 import { buscaLivros } from '../services/livroApi';
 
 const fotos = [
@@ -35,6 +36,16 @@ function Home() {
   return (
     <div>
     <Slideshow imgs={fotos} />
+    <Titulo>Mais Vendidos</Titulo>
+    <Barra/>
+    <Carrossel livros={livros} />
+
+    <Titulo>Destaques</Titulo>
+    <Barra/>
+    <Carrossel livros={livros} />
+
+    <Titulo>Promoções</Titulo>
+    <Barra/>
     <Carrossel livros={livros} />
     </div>
   );
