@@ -3,8 +3,17 @@ import React from 'react';
 import padronizaPreco from '../../utils/padronizaPreco';
 
 import { StyledCardLivro, StyledCardButton } from './styles';
+import { useDispatchCart } from '../Carrinho/Cart';
 
 function CardLivro({ livro }) {
+
+  const dispatch = useDispatchCart();
+
+  const addToCart = item => {
+      console.log(item);
+      dispatch({type: "ADD", item});
+  }
+  
   return (
     <StyledCardLivro>
       <img src={livro.url_img} alt={`Capa do livro ${livro.titulo}`} />
@@ -18,9 +27,9 @@ function CardLivro({ livro }) {
         </StyledCardButton>
 
         {/* BOTAO DE TESTE PARA O CARRINHO ABAIXO */}
-        <StyledCardButton to={`/produto/${livro.id_livro}`}>
+        <button onClick={() => addToCart(livro)}>
           Comprar
-        </StyledCardButton>
+        </button>
       </figcaption>
     </StyledCardLivro>
   );

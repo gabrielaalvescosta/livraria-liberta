@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { useCart } from '../Carrinho/Cart';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserCircle, faShoppingCart, faSearch } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +12,8 @@ import './header.scss'
 
 
 export default function Header() {
+
+    const items = useCart();
  
     return (
         <Container>
@@ -34,7 +37,7 @@ export default function Header() {
     </button>
     <button className="cadastre-se">
     <NavLink to="/carrinho"><FontAwesomeIcon icon={faShoppingCart} className="fa-cart" /></NavLink>
-    <NavLink to="/carrinho" className="carrinho-cont">0</NavLink>
+    <NavLink to="/carrinho" className="carrinho-cont">{items.length}</NavLink>
     </button>
     </Botoes>
 

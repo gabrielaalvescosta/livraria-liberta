@@ -5,3 +5,19 @@
     margin: 2em auto;
     padding: 3em;
 }
+
+.vazio {
+    margin: 3em 0;
+    text-align: center;
+}
+
+.total {
+    margin: 3em 0;
+    border-top: 3px solid whitesmoke;
+    text-align: right;
+    padding: 2em 1em;
+}
+
+.acoes-carrinho {
+    display: flex;
+}
