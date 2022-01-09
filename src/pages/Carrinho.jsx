@@ -11,20 +11,24 @@ import '../components/Carrinho/cart.scss';
 const CartItem = ({ livro, index, handleRemove }) => {
   return (
     <article>
-      <div href="#0">
+      <div href="#0" className="item-carrinho">
         <div>
-          <img src={livro.url_img} className="db w-100" />
+          <img src={livro.url_img} className="imagem-item" />
         </div>
-        <div className="dtc v-top pl2">
-          <h1 className="f6 f5-ns fw6 lh-title black mv0">{livro.titulo}</h1>
-          <h2 className="f6 fw4 mt2 mb0 black-60">{livro.autor}</h2>
-          <dl className="mt2 f6">
-            <dt className="clip">Preço</dt>
+        <div className="item-descricao">
+          <h2>{livro.titulo}</h2>
+          <h3 className="f6 fw4 mt2 mb0 black-60">{livro.autor}</h3>
+        </div>
+
+        <div className="preco-carrinho">
             <p className="preco">{padronizaPreco(livro.preco)}</p>
-          </dl>
-          <button onClick={() => handleRemove(index)}>Remove from cart</button>
-        </div>
+          </div>
+
+          <div className="acoes-carrinho">
+          <button onClick={() => handleRemove(index)}>x</button>
+          </div>
       </div>
+
     </article>
   );
 };
@@ -72,7 +76,7 @@ function Carrinho() {
                     </p>
 
                     <div className="acoes-carrinho">
-      <StyledCardButton to={`/produtos/todos`}>Continuar comprando</StyledCardButton>
+      <StyledCardButton to={`/produtos`}>Continuar comprando</StyledCardButton>
       <StyledCardButton to={`/checkout`}>Concluir compra</StyledCardButton>
       </div>
                 </div>
