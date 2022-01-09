@@ -4,10 +4,10 @@ import Slideshow from '../components/Slideshow/Slideshow';
 import { Titulo, Barra } from '../components/Headings/styles'
 import { buscaLivros } from '../services/livroApi';
 
-const fotos = [
-  'https://raw.githubusercontent.com/gabrielaalvescosta/livraria-liberta/slideshow/src/assets/slideshow.jpg',
-  'https://raw.githubusercontent.com/gabrielaalvescosta/livraria-liberta/cart/src/assets/literatura-juvenil.jpg'
-];
+import literaturaJuvenil from '../assets/literatura-juvenil.jpg';
+import slideShow from '../assets/slideshow.jpg';
+
+const fotos = [ literaturaJuvenil, slideShow ];
 
 function Home() {
   const [livros, setLivros] = useState([]);
