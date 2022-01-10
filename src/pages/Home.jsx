@@ -3,6 +3,7 @@ import Carrossel from '../components/Carrossel/Carrossel';
 import Slideshow from '../components/Slideshow/Slideshow';
 import { Titulo, Barra } from '../components/Headings/styles'
 import { buscaLivros } from '../services/livroApi';
+import { Main } from '../components/Main/styles';
 
 import literaturaJuvenil from '../assets/literatura-juvenil.jpg';
 import slideShow from '../assets/slideshow.jpg';
@@ -37,6 +38,7 @@ function Home() {
   return (
     <div>
     <Slideshow imgs={fotos} />
+    <Main>    
     <Titulo>Mais Vendidos</Titulo>
     <Barra/>
     <Carrossel livros={livros} />
@@ -48,6 +50,8 @@ function Home() {
     <Titulo>Promoções</Titulo>
     <Barra/>
     <Carrossel livros={livros} />
+    </Main>
+
     </div>
   );
 }

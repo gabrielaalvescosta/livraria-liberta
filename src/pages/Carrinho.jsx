@@ -17,7 +17,7 @@ const CartItem = ({ livro, index, handleRemove }) => {
         </div>
         <div className="item-descricao">
           <h2>{livro.titulo}</h2>
-          <h3 className="f6 fw4 mt2 mb0 black-60">{livro.autor}</h3>
+          <h3>{livro.autor}</h3>
         </div>
 
         <div className="preco-carrinho">
