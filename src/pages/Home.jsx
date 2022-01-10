@@ -31,8 +31,6 @@ function Home() {
   }, []);
   
   if (!isLoaded) {
-    // Aqui dá pra adicinar uma animação de carregando, e deixar por exemplo em todo container
-    // como se fosse carregando, no caso dá pra fazer um componente só pra isso.
     return <Loading/>
   }
 
@@ -40,9 +38,10 @@ function Home() {
   return (
     <div>
     <Slideshow imgs={fotos} />
-    <Main> 
-
-     <Categorias />  
+     <Main>
+     <Categorias /> 
+     </Main>
+     <Main carroselMob>
     <Titulo>Mais Vendidos</Titulo>
     <Barra/>
     <Carrossel livros={livros} />
