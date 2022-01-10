@@ -1,11 +1,11 @@
 import React from 'react';
-import Logo from '../../assets/Logo';
+import loading from '../../assets/loading.svg';
 import './loading.scss';
 
 const Loading = () => {
     return (
         <div className="fade">
-            <Logo/>
+            <img src={loading} />
         </div>
     );
 }
