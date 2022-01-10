@@ -8,6 +8,8 @@ import { Titulo, Barra } from '../components/Headings/styles';
 import '../components/SignIn/signin.scss';
 
 function Cadastro() {
+
+
   return (
     <Main>
       <Titulo>Cadastro</Titulo>
