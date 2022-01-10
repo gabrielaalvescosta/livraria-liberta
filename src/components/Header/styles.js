@@ -8,6 +8,9 @@ export const Container = styled.div `
     display: flex;
     justify-content: center;
     width: 100%;
+    position: -webkit-sticky; /* Necessário para funcionar no Safari */
+    position: sticky;
+    top: 0;
     z-index: 999;
 `
 
