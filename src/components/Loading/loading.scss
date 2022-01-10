@@ -1,0 +1,11 @@
+.fade {
+    width: 100vw;
+    height: 100vh;
+    background: var(--clr-azul-450);
+    z-index: 9999;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
