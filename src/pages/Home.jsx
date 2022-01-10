@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import Carrossel from '../components/Carrossel/Carrossel';
 import Slideshow from '../components/Slideshow/Slideshow';
 import { Titulo, Barra } from '../components/Headings/styles'
@@ -33,22 +34,32 @@ function Home() {
     return <h1>Carregando...</h1>;
   }
 
+  const maisVendidos = [...livros].sort((livro1, livro2) => {
+    return livro1.titulo > livro2.titulo;
+  });
+  const livrosDestaques = [...livros].sort((livro1, livro2) => {
+    return livro2.preco - livro1.preco;
+  });
+  const livrosPromocoes = [...livros].sort((livro1, livro2) => {
+    return livro1.preco - livro2.preco;
+  });
 
   return (
-    <div>
-    <Slideshow imgs={fotos} />
-    <Titulo>Mais Vendidos</Titulo>
-    <Barra/>
-    <Carrossel livros={livros} />
+    <>
+      <Slideshow imgs={fotos} />
+      
+      <Titulo>Mais Vendidos</Titulo>
+      <Barra />
+      <Carrossel livros={maisVendidos} />
 
-    <Titulo>Destaques</Titulo>
-    <Barra/>
-    <Carrossel livros={livros} />
+      <Titulo>Destaques</Titulo>
+      <Barra />
+      <Carrossel livros={livrosDestaques} />
 
-    <Titulo>Promoções</Titulo>
-    <Barra/>
-    <Carrossel livros={livros} />
-    </div>
+      <Titulo>Promoções</Titulo>
+      <Barra />
+      <Carrossel livros={livrosPromocoes} />
+    </>
   );
 }
 
