@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Carrossel from '../components/Carrossel/Carrossel';
+import Categorias from '../components/Categorias/Categorias';
 import Slideshow from '../components/Slideshow/Slideshow';
 import { Titulo, Barra } from '../components/Headings/styles'
 import { buscaLivros } from '../services/livroApi';
@@ -38,7 +39,9 @@ function Home() {
   return (
     <div>
     <Slideshow imgs={fotos} />
-    <Main>    
+    <Main> 
+
+     <Categorias />  
     <Titulo>Mais Vendidos</Titulo>
     <Barra/>
     <Carrossel livros={livros} />

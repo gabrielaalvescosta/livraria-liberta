@@ -76,7 +76,7 @@ function Carrinho() {
                     </p>
 
                     <div className="acoes-carrinho">
-      <StyledCardButton to={`/produtos`}>Continuar comprando</StyledCardButton>
+      <StyledCardButton to={`/`}>Continuar comprando</StyledCardButton>
       <StyledCardButton to={`/checkout`}>Concluir compra</StyledCardButton>
       </div>
                 </div>
