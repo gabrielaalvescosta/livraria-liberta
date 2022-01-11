@@ -44,10 +44,10 @@ export default function Footer() {
                 </section>
                 <section className="navbar-footer">
                     <nav>
-                        <div class='logotipo-rodape'><Logo/></div>
+                        <div className='logotipo-rodape'><Logo/></div>
                         
                         <ul>
-                            {Array.of("Home", "Quem somos", "sac", "política de privacidade", "termos de uso").map((aba)=>{
+                            {Array.of("Home", "Quem somos", "sac", "política de privacidade", "termos de uso").map((aba)=> {
                                 return(
                                     <li>
                                         {aba}

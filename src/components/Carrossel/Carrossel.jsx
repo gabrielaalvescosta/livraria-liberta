@@ -6,7 +6,7 @@ import { StyledCarrosel } from './styles';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
-  { width: 468, itemsToShow: 2},
+  { width: 468, itemsToShow: 1},
   { width: 920, itemsToShow: 3 },
   { width: 1920, itemsToShow: 4 },
 ];
