@@ -2,18 +2,20 @@ import styled from "styled-components";
 import Carousel from 'react-elastic-carousel';
 
 export const StyledCarrosel = styled(Carousel)`
-  --bg-arrow: #d5d5d5;
-  --clr-arrow: #acacac;
+  --bg-arrow: #efefef;
+  --clr-arrow: #fff;
 
   .rec {
     .rec-arrow {
-      color: var(--clr-arrow);
-      background-color: var(--bg-arrow);
+        color: var(--clr-arrow);
+        background-color: #dadada;
+        border: 0px solid #efefef00 !important;
+        box-shadow: none;
 
       :hover {
         color: var(--clr-branco);
-        background-color: var(--clr-preto);
-        border-radius: 25%;
+        background-color: #e3e3e3;
+        border-radius: 50%;
       }
 
       :disabled {

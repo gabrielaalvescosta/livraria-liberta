@@ -4,6 +4,7 @@ import padronizaPreco from '../../utils/padronizaPreco';
 
 import { StyledCardLivro, StyledCardButton } from './styles';
 import { useDispatchCart } from '../Carrinho/Cart';
+import './card.scss';
 
 function CardLivro({ livro }) {
 
@@ -27,7 +28,7 @@ function CardLivro({ livro }) {
         </StyledCardButton>
 
         {/* BOTAO DE TESTE PARA O CARRINHO ABAIXO */}
-        <button onClick={() => addToCart(livro)}>
+        <button class="botao-comprar" onClick={() => addToCart(livro)}>
           Comprar
         </button>
       </figcaption>

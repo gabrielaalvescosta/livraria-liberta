@@ -6,9 +6,9 @@ import { StyledCarrosel } from './styles';
 
 const breakPoints = [
   { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 2 },
-  { width: 768, itemsToShow: 4 },
-  { width: 1200, itemsToShow: 5 },
+  { width: 468, itemsToShow: 1},
+  { width: 920, itemsToShow: 3 },
+  { width: 1920, itemsToShow: 4 },
 ];
 
 function Carrosel({ livros }) {

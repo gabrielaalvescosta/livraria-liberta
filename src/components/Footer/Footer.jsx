@@ -1,6 +1,9 @@
 import React from 'react';
 import './footer.scss'
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCcVisa, faCcAmex, faCcMastercard, faCcPaypal, faCcAmazonPay, faCcStripe, faCcDinersClub, faCcDiscover, faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+
 import Logo  from '../../assets/Logo';
 
 export default function Footer() {
@@ -13,12 +16,14 @@ export default function Footer() {
                             Pagamento
                         </h4>
                         <div className="bandeira-cartoes">
-                            <img src={"image/logo-visa.png"} alt="logo da bandeira do cartão visa"/>
-                            <img src={"image/mastercard.png"} alt="logo da bandeira do cartão mastercard"/>
-                            <img src={"image/elo.png"} alt="logo da bandeira do cartão elo"/>
-                            <img src={"image/cartao-hiper.png"} alt="logo da bandeira do cartão hiper"/>
-                            <img src={"image/hipercard.png"} alt="logo da bandeira do cartão hipercard"/>
-                            <img src={"image/paypal.png"} alt="logo da bandeira paypal"/>
+                        <FontAwesomeIcon icon={faCcVisa} className="fa-user" />
+                        <FontAwesomeIcon icon={faCcAmex} className="fa-user" />
+                        <FontAwesomeIcon icon={faCcMastercard} className="fa-user" />
+                        <FontAwesomeIcon icon={faCcPaypal} className="fa-user" />
+                        <FontAwesomeIcon icon={faCcAmazonPay} className="fa-user" />
+                        <FontAwesomeIcon icon={faCcStripe} className="fa-user" />
+                        <FontAwesomeIcon icon={faCcDinersClub} className="fa-user" />
+                        <FontAwesomeIcon icon={faCcDiscover} className="fa-user" />
                         </div>
                     </section>
                     <section className="seguranca">
@@ -39,9 +44,10 @@ export default function Footer() {
                 </section>
                 <section className="navbar-footer">
                     <nav>
-                        <Logo/>
+                        <div className='logotipo-rodape'><Logo/></div>
+                        
                         <ul>
-                            {Array.of("Home", "Quem somos", "sac", "política de privacidade", "termos de uso").map((aba)=>{
+                            {Array.of("Home", "Quem somos", "sac", "política de privacidade", "termos de uso").map((aba)=> {
                                 return(
                                     <li>
                                         {aba}
@@ -61,9 +67,9 @@ export default function Footer() {
                             </p>
                         </article>
                         <div className="informacoes-de-redes">
-                            <img src={"image/ant-design_facebook-filled.png"} alt="imagem da rede social facebook"/>
-                            <img src={"image/ant-design_twitter-outlined.png"} alt="imagem da rede social twitter"/>
-                            <img src={"image/ant-design_linkedin-filled.png"} alt="imagem da rede social instagram"/>
+                        <FontAwesomeIcon icon={faInstagram} className="fa-user" />
+                        <FontAwesomeIcon icon={faFacebook} className="fa-user" />
+                        <FontAwesomeIcon icon={faTwitter} className="fa-user" />
                         </div>
                     </div>
                 </section>
