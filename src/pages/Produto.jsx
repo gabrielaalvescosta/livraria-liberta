@@ -1,4 +1,5 @@
 import React from 'react'
+import Livros from '../components/Livros/Livros'
 
 function Produto() {
   const { idLivro } = useParams();  
@@ -35,7 +36,7 @@ function Produto() {
   } 
   return (
     <div>
-      
+      <Livros/>
     </div>
   )
 }
