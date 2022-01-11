@@ -1,19 +1,10 @@
-import axios from 'axios';
+import api from "./api";
 
-const urlBase = 'https://livraria-liberta-api.herokuapp.com/api/livro';
-
-export async function buscaLivros(query) {
-  let url = `${urlBase}/todos`;
-  const queryArr = Object.entries({ ...query });
-
-  if (queryArr.length) {
-    url += `?${queryArr[0][0]}=${queryArr[0][1]}`;
-  }
-
+export async function buscaLivros(params) {
   try {
-    const res = await axios.get(url);
+    const res = await api.get('/api/livro/todos', { params: params });
     return res.data;
   } catch (err) {
-    return err;
+    return err.response.data;
   }
 }

@@ -7,11 +7,9 @@ import { useDispatchCart } from '../Carrinho/Cart';
 import './card.scss';
 
 function CardLivro({ livro }) {
-
   const dispatch = useDispatchCart();
-
+  
   const addToCart = item => {
-      console.log(item);
       dispatch({type: "ADD", item});
   }
   
