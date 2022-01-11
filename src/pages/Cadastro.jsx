@@ -1,75 +1,129 @@
 import React, { useState } from 'react';
+
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+
+import toastOptions from '../utils/toastOptions';
 import { Input, LabelInput } from '../components/Input/Input';
 import { Button } from '../components/Button/Button';
 import { BoxCadastro } from '../components/SignIn/styles';
 import { Main } from '../components/Main/styles';
 import { Titulo, Barra } from '../components/Headings/styles';
 import { criaUsuario } from '../services/usuarioApi';
-import { ToastContainer, toast } from 'react-toastify';
 
-import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.min.css';
 
 import '../components/SignIn/signin.scss';
-import { useNavigate } from 'react-router-dom';
 
 function Cadastro() {
-
   const [data, setData] = useState({
-    "CPF": "",
-    "nome": "",
-    "email": "",
-    "senha": "",
-    "endereco": "",
-    "url_img": "",
+    CPF: '',
+    nome: '',
+    email: '',
+    senha: '',
+    endereco: '',
+    url_img: '',
   });
-
-  function onChange(e) {
-    setData({...data, [e.target.name]: e.target.value });
-  }
-
+  const [confirmaSenha, setConfirmaSenha] = useState('');
   const navigate = useNavigate();
 
-  async function submit(e) {
-    e.preventDefault();
-    console.log(data);
-
-  
-      const res = await criaUsuario(data);
-      console.log(res);
-
-      if(res.erro) {
-        toast(res.msg);
-      } else {
-        navigate('/login');
-        console.log(res);
-      }
-   
+  const handleOnChange = event => {
+    const input = event.target;
+    if (input.name === 'confirmaSenha') {
+      console.log('ALOOOOOOOO');
+      setConfirmaSenha(input.value);
+    } else {
+      setData({
+        ...data, [event.target.name]: event.target.value,
+      });
+    }
   }
 
-  
+  const verificaSenha = (senha, confirmaSenha) => {
+    return senha === confirmaSenha;
+  }
+
+  const handleSubmit = async event => {
+    event.preventDefault();
+    const id = toast.loading('Verificando dados...', toastOptions);
+
+    if (!verificaSenha(data.senha, confirmaSenha)) {
+      toast.update(id, {
+        ...toastOptions,
+        render: 'As senhas precisam ser iguais.',
+        type: 'error',
+        isLoading: false,
+      });
+    } else {
+      const res = await criaUsuario(data);
+
+      if(res.erro) {
+        toast.update(id, {
+          ...toastOptions,
+          render: res.msg,
+          type: 'error',
+          isLoading: false,
+        });
+      } else {
+        toast.update(id, {
+          ...toastOptions,
+          render: 'Conta criada com sucesso, faça login abaixo!',
+          type: 'success',
+          position: 'top-right',
+          isLoading: false,
+        });
+
+        navigate('/login');
+      }
+    }
+  }
 
   return (
     <Main>
       <Titulo>Cadastro</Titulo>
       <Barra/>
       <BoxCadastro>
-      <form onSubmit={submit} className="cadastro">
-      <Input required onChange={onChange} name="CPF" type="text" className="form" placeholder="CPF 00000000000"/>
-      <Input required onChange={onChange} name="nome" type="text" className="form" placeholder="Nome"/>
-      <Input required onChange={onChange}  name="email" type="email" className="form" placeholder="Email"/>
-      <div className="cadastro-senha">
-      <Input required onChange={onChange} metade  name="senha" type="password" className="form" placeholder="Senha"/>
-      <Input required metade type="password" className="form" placeholder="Repita a senha"/>
-      </div>
-      <Input required onChange={onChange}  name="endereco" type="text" className="form" placeholder="Endereço"/>
-      <LabelInput>Foto de perfil:</LabelInput>
-      <Input required onChange={onChange} name="url_img" type="url" className="form" placeholder="Foto de perfil"/>
-      <Button type="submit">Cadastrar</Button>
-      <ToastContainer />
-      </form>
+        <form onSubmit={handleSubmit} className="cadastro">
+          <Input
+            className="form" name="CPF" type="text" placeholder="CPF 00000000000" required
+            onChange={handleOnChange}
+          />
+          <Input
+            className="form" name="nome" type="text" placeholder="Nome" required
+            onChange={handleOnChange}
+          />
+          <Input
+             className="form" name="email" type="email" placeholder="Email" required
+            onChange={handleOnChange}
+          />
+
+          <div className="cadastro-senha">
+            <Input 
+              className="form" name="senha" type="password" placeholder="Senha" required metade 
+              onChange={handleOnChange}
+            />
+            <Input
+              className="form" name="confirmaSenha" type="password" placeholder="Repita a senha" required metade
+              onChange={handleOnChange}
+            />
+          </div>
+
+          <Input
+            className="form" name="endereco" type="text" placeholder="Endereço"
+            onChange={handleOnChange}
+          />
+
+          <LabelInput>Foto de perfil:</LabelInput>
+          <Input
+            className="form" name="url_img" type="url" placeholder="Foto de perfil" required
+            onChange={handleOnChange}
+          />
+          
+          <Button type="submit">Cadastrar</Button>
+        </form>
       </BoxCadastro>
     </Main>
-  )
+  );
 }
 
 export default Cadastro;
