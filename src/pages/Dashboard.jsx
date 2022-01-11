@@ -45,7 +45,7 @@ function Dashboard() {
   
   return (
     <>
-      <FundoProfile />
+      <FundoProfile src={usuario.url_img} />
    
       <Perfil>
         <FotoPerfil src={usuario.url_img} />
