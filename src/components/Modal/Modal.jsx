@@ -1,25 +1,11 @@
-import React, { useState } from 'react';
-import { Main, Dados, FundoProfile, FotoPerfil, Perfil, DadosPerfil, TituloPerfil, TopoPerfil, LinhaPerfil, ColunaPerfil, EditaPerfil } from '../components/Main/styles';
-import Loading from '../components/Loading/Loading';
+import React from 'react';
+import { Dados, TopoPerfil, LinhaPerfil, ColunaPerfil, EditaPerfil } from '../Main/styles';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
-import Modal from '../components/Modal/Modal';
 
-function Dashboard() {
-
-  return (    
-    <div>
-    <FundoProfile />
-   
-    <Perfil>
-    <FotoPerfil />
-    <DadosPerfil>
-      <TituloPerfil>Minha conta</TituloPerfil>
-      <h3>Gabriela Costa</h3>
-    </DadosPerfil>
-    </Perfil>
-   
-    <Dados>
+const Modal = () => {
+    return (
+        <Dados>
       <TopoPerfil>
       <h2>Meus dados</h2>
       <EditaPerfil>
@@ -54,9 +40,7 @@ function Dashboard() {
       </LinhaPerfil>
 
     </Dados>
-
-    </div>
-  )
+    );
 }
 
-export default Dashboard;
+export default Modal;
