@@ -1,23 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './livros.scss'
 
-export default function Livros() {
-
-    const [livros, setLivros] = useState([])
-
-    useEffect(()=>{
-        fetch('https://livraria-liberta-api.herokuapp.com/api/livro/1', {
-            method: "GET",
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        })
-        .then((resp) => resp.json())
-        .then((data) =>{
-            setLivros([data])
-        })
-        .catch((err) => console.log(err))
-    },[])
+export default function Livros(){
 
     return (
         <section className="body-produtos">
