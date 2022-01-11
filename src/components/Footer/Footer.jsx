@@ -47,9 +47,10 @@ export default function Footer() {
                         <div className='logotipo-rodape'><Logo/></div>
                         
                         <ul>
-                            {Array.of("Home", "Quem somos", "sac", "política de privacidade", "termos de uso").map((aba)=> {
+                            {Array.of("Home", "Quem somos", "sac", "política de privacidade", "termos de uso").map((aba, index)=>{
+
                                 return(
-                                    <li>
+                                    <li key={index}>
                                         {aba}
                                     </li>
                                 )

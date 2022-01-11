@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { buscaUsuarioPeloId } from '../services/usuarioApi';
+
 import { Main, Dados, FundoProfile, FotoPerfil, Perfil, DadosPerfil, TituloPerfil, TopoPerfil, LinhaPerfil, ColunaPerfil, EditaPerfil } from '../components/Main/styles';
 import Loading from '../components/Loading/Loading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,7 +8,28 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import Modal from '../components/Modal/Modal';
 
 function Dashboard() {
+  const [usuario, setUsuario] = useState({});
+  const [isLoaded, setIsLoaded] = useState(false);
 
+  useEffect(() => {
+    const handleBuscaUsuario = async () => {
+      try {
+        const idUsuario = localStorage.getItem('idUsuario');
+        const dados = await buscaUsuarioPeloId(idUsuario);
+        setUsuario(dados.usuario);
+      } catch (err) {
+        console.log('Erro na requisição:', err.message);
+      } finally {
+        setIsLoaded(true);
+      }
+    }
+    handleBuscaUsuario();
+  }, []);
+  
+  if (!isLoaded) {
+    return <Loading />;
+  }
+  
   return (    
     <div>
     <FundoProfile />
@@ -54,9 +77,8 @@ function Dashboard() {
       </LinhaPerfil>
 
     </Dados>
-
     </div>
-  )
+  );
 }
 
 export default Dashboard;
