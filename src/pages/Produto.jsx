@@ -1,5 +1,10 @@
-import React from 'react'
-import Livros from '../components/Livros/Livros'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import CardLivro from '../components/CardLivro/CardLivro';
+import Loading from '../components/Loading/Loading';
+import { buscaLivroPeloId, buscaLivros } from '../services/livroApi';
+
+import Carrossel from '../components/Carrossel/Carrossel';
 
 function Produto() {
   const { idLivro } = useParams();  
@@ -35,9 +40,11 @@ function Produto() {
     return <Loading />;
   } 
   return (
-    <div>
-      <Livros/>
+    <div>     
+    {console.log(livro, livrosRelacionados)}
+    <Carrossel livros={livrosRelacionados} />
     </div>
+    
   )
 }
 
