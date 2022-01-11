@@ -1,18 +1,46 @@
 import React from 'react';
-import './livros.scss'
+import Loading from '../Loading/Loading'
+import Carrossel from '../Carrossel/Carrossel'
 
 export default function Livros(){
+    const { idLivro } = useParams();  
+    const [livro, setLivro] = useState({});
+    const [livrosRelacionados, setLivrosRelacionados] = useState([]); 
+    const [isLoaded, setIsLoaded] = useState(false);
+  
+    useEffect(() => {
+      const handleBuscaLivrosRelacionados = async (categoria) => {
+        try {
+          const dados = await buscaLivros({ categoria: categoria });
+          setLivrosRelacionados(dados.livros);
+        } catch (err) {
+          console.log('Erro na requisição:', err.msg);
+        }
+      }
+      const handleBuscaLivro = async () => {
+        try {
+          const dados = await buscaLivroPeloId(idLivro);
+          const dadosLivro = await handleBuscaLivrosRelacionados(dados.livro.categoria);
+          setLivro(dados.livro);
+          setLivrosRelacionados(dadosLivro.livros);
+        } catch (err) {
+          console.log('Erro na requisição:', err.msg);
+        } finally {
+          setIsLoaded(true);
+        }
+      }
+      handleBuscaLivro();
+    }, [idLivro]);
+  
+    if (!isLoaded) {
+      return <Loading />;
+    } 
 
     return (
         <section className="body-produtos">
         <section className="apresentacao-do-livro">
             <div className="foto-do-livro">
-            {livros.map(
-                (livro,id) => 
-                    <div key={id} livro={livro}> 
-                    <p>{livro.titulo}</p>
-                    </div>
-            )}
+                <h1>{livro.titulo}</h1>
             </div>
             <div>
                 <article className="titulo-e-preco">
@@ -62,6 +90,7 @@ export default function Livros(){
             <h4 className="titulo-relacionados">
                 Relacionados
             </h4>
+                <Carrossel />
         </section>
     </section>
     )
