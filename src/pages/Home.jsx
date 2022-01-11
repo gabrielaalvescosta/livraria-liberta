@@ -48,18 +48,24 @@ function Home() {
   return (
     <>
       <Slideshow imgs={fotos} />
+
+      <Main>
+        <Categorias /> 
+      </Main>
       
-      <Titulo>Mais Vendidos</Titulo>
-      <Barra />
-      <Carrossel livros={maisVendidos} />
+      <Main carroselMob>
+        <Titulo>Mais Vendidos</Titulo>
+        <Barra />
+        <Carrossel livros={maisVendidos} />
 
-      <Titulo>Destaques</Titulo>
-      <Barra />
-      <Carrossel livros={livrosDestaques} />
+        <Titulo>Destaques</Titulo>
+        <Barra />
+        <Carrossel livros={livrosDestaques} />
 
-      <Titulo>Promoções</Titulo>
-      <Barra />
-      <Carrossel livros={livrosPromocoes} />
+        <Titulo>Promoções</Titulo>
+        <Barra />
+        <Carrossel livros={livrosPromocoes} />
+      </Main>
     </>
   );
 }

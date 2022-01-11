@@ -5,7 +5,6 @@ import { Main, Dados, FundoProfile, FotoPerfil, Perfil, DadosPerfil, TituloPerfi
 import Loading from '../components/Loading/Loading';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
-import Modal from '../components/Modal/Modal';
 
 function Dashboard() {
   const [usuario, setUsuario] = useState({});
@@ -29,54 +28,56 @@ function Dashboard() {
   if (!isLoaded) {
     return <Loading />;
   }
+
+  console.log(usuario);
   
-  return (    
+  return (
     <div>
     <FundoProfile />
    
-    <Perfil>
+     <Perfil>
     <FotoPerfil />
     <DadosPerfil>
-      <TituloPerfil>Minha conta</TituloPerfil>
-      <h3>Gabriela Costa</h3>
-    </DadosPerfil>
-    </Perfil>
-   
+       <TituloPerfil>Minha conta</TituloPerfil>
+       <h3>{usuario.nome}</h3>
+     </DadosPerfil>
+     </Perfil>
+    
     <Dados>
-      <TopoPerfil>
-      <h2>Meus dados</h2>
-      <EditaPerfil>
-        <button onClick={e => {this.showModal()}}> <FontAwesomeIcon icon={faEdit} /><Modal/></button>
+       <TopoPerfil>
+       <h2>Meus dados</h2>
+       <EditaPerfil>
+         <button> <FontAwesomeIcon icon={faEdit} />MODAL</button>
        
      
-      </EditaPerfil>
-      </TopoPerfil>
+       </EditaPerfil>
+       </TopoPerfil>
 
-      <LinhaPerfil>
-      <ColunaPerfil titulo>Endereço:</ColunaPerfil>
-      <ColunaPerfil>Rua Geraldina Carlos dos Santos, 67 - Núcleo Residencial Isabela - Taboão da Serra / SP
-      </ColunaPerfil>
-      </LinhaPerfil>
+       <LinhaPerfil>
+       <ColunaPerfil titulo>Endereço:</ColunaPerfil>
+       <ColunaPerfil>Rua Geraldina Carlos dos Santos, 67 - Núcleo Residencial Isabela - Taboão da Serra / SP
+       </ColunaPerfil>
+       </LinhaPerfil>
 
 
-      <LinhaPerfil>
-      <ColunaPerfil titulo>Email:</ColunaPerfil>
-      <ColunaPerfil>gabrielaaalvescosta@gmail.com</ColunaPerfil>
-      </LinhaPerfil>
+       <LinhaPerfil>
+       <ColunaPerfil titulo>Email:</ColunaPerfil>
+       <ColunaPerfil>gabrielaaalvescosta@gmail.com</ColunaPerfil>
+       </LinhaPerfil>
 
     
-      <LinhaPerfil>
-      <ColunaPerfil titulo>Senha</ColunaPerfil>
-      <ColunaPerfil>***********</ColunaPerfil>
-      </LinhaPerfil>
+       <LinhaPerfil>
+       <ColunaPerfil titulo>Senha</ColunaPerfil>
+       <ColunaPerfil>***********</ColunaPerfil>
+       </LinhaPerfil>
 
 
-      <LinhaPerfil>
-      <ColunaPerfil titulo>CPF</ColunaPerfil>
-      <ColunaPerfil>***********94</ColunaPerfil>
-      </LinhaPerfil>
+       <LinhaPerfil>
+       <ColunaPerfil titulo>CPF</ColunaPerfil>
+       <ColunaPerfil>***********94</ColunaPerfil>
+       </LinhaPerfil>
 
-    </Dados>
+     </Dados>
     </div>
   );
 }

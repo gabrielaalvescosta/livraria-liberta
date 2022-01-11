@@ -20,6 +20,7 @@ export const Categoria = styled.div `
     text-align: center;
     align-items: center;
     flex-direction: column;
+    flex-wrap: wrap;
     margin: 3em 1em 2em 1em;
     box-shadow: 5px 5px 10px 0 #ebebeb;
 
