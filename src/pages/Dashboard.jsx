@@ -1,8 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import { buscaUsuarioPeloId } from '../services/usuarioApi';
 
-import { Main, Dados, FundoProfile, FotoPerfil, Perfil, DadosPerfil, TituloPerfil, TopoPerfil, LinhaPerfil, ColunaPerfil, EditaPerfil } from '../components/Main/styles';
+import {  
+  Dados,
+  FundoProfile,
+  FotoPerfil,
+  Perfil,
+  DadosPerfil,
+  TituloPerfil,
+  TopoPerfil,
+  LinhaPerfil,
+  ColunaPerfil,
+  EditaPerfil
+} from '../components/Main/styles';
 import Loading from '../components/Loading/Loading';
+
+import mascaraDadosSensiveis from '../utils/mascaraDadosSensiveis';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
@@ -28,57 +42,54 @@ function Dashboard() {
   if (!isLoaded) {
     return <Loading />;
   }
-
-  console.log(usuario);
   
   return (
-    <div>
-    <FundoProfile />
+    <>
+      <FundoProfile />
    
-     <Perfil>
-    <FotoPerfil />
-    <DadosPerfil>
-       <TituloPerfil>Minha conta</TituloPerfil>
-       <h3>{usuario.nome}</h3>
-     </DadosPerfil>
-     </Perfil>
+      <Perfil>
+        <FotoPerfil src={usuario.url_img} />
+        <DadosPerfil>
+          <TituloPerfil>Minha conta</TituloPerfil>
+          <h3>{usuario.nome}</h3>
+        </DadosPerfil>
+      </Perfil>
     
-    <Dados>
-       <TopoPerfil>
-       <h2>Meus dados</h2>
-       <EditaPerfil>
-         <button> <FontAwesomeIcon icon={faEdit} />MODAL</button>
-       
-     
-       </EditaPerfil>
-       </TopoPerfil>
+      <Dados>
+        <TopoPerfil>
+          <h2>Meus dados</h2>
+          <EditaPerfil>
+            <button type="button">
+              <FontAwesomeIcon icon={faEdit} />
+            </button>
+          </EditaPerfil>
+        </TopoPerfil>
 
-       <LinhaPerfil>
-       <ColunaPerfil titulo>Endereço:</ColunaPerfil>
-       <ColunaPerfil>Rua Geraldina Carlos dos Santos, 67 - Núcleo Residencial Isabela - Taboão da Serra / SP
-       </ColunaPerfil>
-       </LinhaPerfil>
+        <LinhaPerfil>
+          <ColunaPerfil titulo>Endereço:</ColunaPerfil>
+          <ColunaPerfil>
+            {usuario.endereco ? usuario.endereco : 'Sem endereço'}
+          </ColunaPerfil>
+        </LinhaPerfil>
 
+        <LinhaPerfil>
+          <ColunaPerfil titulo>Email:</ColunaPerfil>
+          <ColunaPerfil>
+            {usuario.email}
+          </ColunaPerfil>
+        </LinhaPerfil>
 
-       <LinhaPerfil>
-       <ColunaPerfil titulo>Email:</ColunaPerfil>
-       <ColunaPerfil>gabrielaaalvescosta@gmail.com</ColunaPerfil>
-       </LinhaPerfil>
+        <LinhaPerfil>
+          <ColunaPerfil titulo>Senha:</ColunaPerfil>
+          <ColunaPerfil>{mascaraDadosSensiveis(usuario.senha)}</ColunaPerfil>
+        </LinhaPerfil>
 
-    
-       <LinhaPerfil>
-       <ColunaPerfil titulo>Senha</ColunaPerfil>
-       <ColunaPerfil>***********</ColunaPerfil>
-       </LinhaPerfil>
-
-
-       <LinhaPerfil>
-       <ColunaPerfil titulo>CPF</ColunaPerfil>
-       <ColunaPerfil>***********94</ColunaPerfil>
-       </LinhaPerfil>
-
-     </Dados>
-    </div>
+        <LinhaPerfil>
+          <ColunaPerfil titulo>CPF:</ColunaPerfil>
+          <ColunaPerfil>{mascaraDadosSensiveis(usuario.CPF)}</ColunaPerfil>
+        </LinhaPerfil>
+      </Dados>
+    </>
   );
 }
 
