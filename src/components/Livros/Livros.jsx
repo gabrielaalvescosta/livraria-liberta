@@ -6,20 +6,26 @@ export default function Livros() {
     const [livros, setLivros] = useState([])
 
     useEffect(()=>{
-        fetch('https://livraria-liberta-api.herokuapp.com/api/livro/1')
-        .then(res=>res.json())
-        .then(
-            (resultado)=>{setLivros([resultado])}
-        )
-    })
+        fetch('https://livraria-liberta-api.herokuapp.com/api/livro/1', {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+        .then((resp) => resp.json())
+        .then((data) =>{
+            setLivros([data])
+        })
+        .catch((err) => console.log(err))
+    },[])
 
     return (
         <section className="body-produtos">
         <section className="apresentacao-do-livro">
             <div className="foto-do-livro">
             {livros.map(
-                (livro) => 
-                    <div key={livro.id_livro.toString()} livro={livro}> 
+                (livro,id) => 
+                    <div key={id} livro={livro}> 
                     <p>{livro.titulo}</p>
                     </div>
             )}
