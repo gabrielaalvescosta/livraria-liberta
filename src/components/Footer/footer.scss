@@ -1,5 +1,6 @@
 .body-footera{
     background-color: white;
+    margin: 4em 0 0 0;
     
 }
 
@@ -8,13 +9,14 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: #efefef;
     color: #757575;
+    text-align: center;
 }
 
 .pagamento-seguranca{
     align-items: flex-start;
     padding: 3% 10% 3% 10%;
+    background: white;
 }
 
 .pagamento {
@@ -25,7 +27,7 @@
 
 .pagamento h4, .seguranca h4{
     text-transform: uppercase;
-    padding: 0px 7px 0px 7px;
+    padding: 2em 0;
 }
 
 .bandeira-cartoes{
@@ -47,10 +49,18 @@
     flex-direction: column;
     justify-content: space-between;
     height: 70px;
+    filter: saturate(0.1);
 }
 
 .verificacao-do-site img, .verificacao-do-site div img{
     width: 70px;
+    filter: saturate(0.1);
+
+    &:hover {
+        filter: saturate(1);
+
+    }
+
 }
 
 .informacoes-juridicas-e-redes{
@@ -70,31 +80,40 @@
 }
 
 .navbar-footer li{
-    color: #757575;
+    color: var(--clr-preto);
     text-transform: uppercase;
 }
 
 .rodape{
     background-color: #c2f2e9;
-    color: #757575;
+    color: #236e7b;
+    padding: 2em 0;
+    font-size: small;
 }
 
-@media(max-width: 700px) {
+@media(max-width: 1010px) {
     .pagamento-seguranca{
         flex-direction: column;
         align-items: center;
         padding:1% 1% 7% 1%;
     }
-    .navbar-footer nav, .navbar-footer nav ul{
+    .navbar-footer nav, .navbar-footer nav ul {
         flex-direction: column;
         justify-content: space-around;
         padding: initial;
-        height: 300px;
+        padding: 2em 0;
+        line-height: 2;
     }
+
     .informacoes-juridicas-e-redes{
         align-items: center;
     }
     .informacoes-juridicas{
         width: 70%;
+    }
+
+    .logotipo-rodape {
+        position: relative;
+        left: 30px;
     }
 }

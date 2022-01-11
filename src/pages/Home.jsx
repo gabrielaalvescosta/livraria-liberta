@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 import Carrossel from '../components/Carrossel/Carrossel';
+import Categorias from '../components/Categorias/Categorias';
 import Slideshow from '../components/Slideshow/Slideshow';
-import { Titulo, Barra } from '../components/Headings/styles'
+import { Titulo, Barra } from '../components/Headings/styles';
 import { buscaLivros } from '../services/livroApi';
+import { Main } from '../components/Main/styles';
 
 import literaturaJuvenil from '../assets/literatura-juvenil.jpg';
 import slideShow from '../assets/slideshow.jpg';
+import Loading from '../components/Loading/Loading';
 
 const fotos = [ literaturaJuvenil, slideShow ];
 
@@ -29,9 +32,7 @@ function Home() {
   }, []);
   
   if (!isLoaded) {
-    // Aqui dá pra adicinar uma animação de carregando, e deixar por exemplo em todo container
-    // como se fosse carregando, no caso dá pra fazer um componente só pra isso.
-    return <h1>Carregando...</h1>;
+    return <Loading/>
   }
 
   const maisVendidos = [...livros].sort((livro1, livro2) => {

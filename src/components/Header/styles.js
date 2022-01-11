@@ -8,7 +8,10 @@ export const Container = styled.div `
     display: flex;
     justify-content: center;
     width: 100%;
-    z-index: 999;
+    position: -webkit-sticky; /* Necessário para funcionar no Safari */
+    position: sticky;
+    top: 0;
+    z-index: 50;
 `
 
 export const Wrapper = styled.div `

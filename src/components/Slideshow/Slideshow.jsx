@@ -15,10 +15,10 @@ const Slideshow = ( { imgs }) => {
 
     const next = () => {
         if(index === imgs.length -1){
-            setIndex(1);
+            setIndex(0);
         } 
         else {
-            setIndex(index+1);
+            setIndex(index + 1);
         }
     }
 

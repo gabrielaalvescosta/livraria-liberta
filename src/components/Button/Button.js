@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 export const Button = styled.button `
         padding: 1.5em 3em;
         width: 100%;
+        cursor: pointer;
         text-align: center;
         text-transform: uppercase;
         background: var(--clr-preto);
