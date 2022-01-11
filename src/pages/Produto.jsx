@@ -42,6 +42,7 @@ function Produto() {
   return (
     <div>     
     {console.log(livro, livrosRelacionados)}
+    <h1>{livro.titulo}</h1>
     <Carrossel livros={livrosRelacionados} />
     </div>
     
