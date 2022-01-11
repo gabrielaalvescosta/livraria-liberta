@@ -14,7 +14,7 @@
     border: 1px solid whitesmoke;
     border-radius: 15px;
     font-weight: 500;
-    font-family: var(--ff-fonte);
+    font-family: var(--ff-principal);
 }
 
 .pesquisar:hover {
@@ -36,11 +36,12 @@
 .cadastre-se {
         max-width: 120px;
         display: flex;
-        font-family: var(--ff-fonte);
+        font-family: var(--ff-principal);
         align-items: center;
         text-align: left;
         background: transparent;
         border: none;
+        cursor: pointer;
 }
 
 .fa-user, .fa-cart {
@@ -56,7 +57,7 @@
         width: 24px;
         text-align: center;
         font-size: 0.9em;
-        font-family: var(--ff-fonte);
+        font-family: var(--ff-principal);
         font-weight: bold;
         background: #d6fff3;
         color: var(--clr-preto);
@@ -65,7 +66,7 @@
 /* MEDIA QUERIES */
 
 @media(max-width: 1490px) {
-        a.link-cadastre {
+        .link-cadastre {
                 display:none;
         }
 

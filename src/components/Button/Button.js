@@ -13,6 +13,7 @@ export const Button = styled.button `
         margin: 1em 0;
         font-size: 1em;
         font-family: 'Readex Pro', sans-serif;
+        cursor: pointer;
 
                 &:hover {
                         background: var(--clr-cinza-800);

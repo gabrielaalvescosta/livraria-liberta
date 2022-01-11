@@ -3,7 +3,7 @@ import Cart from '../components/Carrinho/Cart';
 import { Main } from '../components/Main/styles';
 import { useCart, useDispatchCart } from '../components/Carrinho/Cart';
 import { Subtitulo, Barra } from '../components/Headings/styles';
-import { StyledCardLivro, StyledCardButton } from '../components/CardLivro/styles';
+import { StyledCardButton } from '../components/CardLivro/styles';
 import padronizaPreco from '../utils/padronizaPreco';
 
 import '../components/Carrinho/cart.scss';
@@ -13,7 +13,7 @@ const CartItem = ({ livro, index, handleRemove }) => {
     <article>
       <div href="#0" className="item-carrinho">
         <div>
-          <img src={livro.url_img} className="imagem-item" />
+          <img src={livro.url_img} alt={livro.titulo} className="imagem-item" />
         </div>
         <div className="item-descricao">
           <h2>{livro.titulo}</h2>
