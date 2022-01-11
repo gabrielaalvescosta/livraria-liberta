@@ -1,12 +1,28 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './livros.scss'
 
 export default function Livros() {
+
+    const [livros, setLivros] = useState([])
+
+    useEffect(()=>{
+        fetch('https://livraria-liberta-api.herokuapp.com/api/livro/1')
+        .then(res=>res.json())
+        .then(
+            (resultado)=>{setLivros([resultado])}
+        )
+    })
+
     return (
         <section className="body-produtos">
         <section className="apresentacao-do-livro">
             <div className="foto-do-livro">
-
+            {livros.map(
+                (livro) => 
+                    <div key={livro.id_livro.toString()} livro={livro}> 
+                    <p>{livro.titulo}</p>
+                    </div>
+            )}
             </div>
             <div>
                 <article className="titulo-e-preco">

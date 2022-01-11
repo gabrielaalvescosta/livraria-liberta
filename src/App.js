@@ -6,7 +6,7 @@ import Header from './components/Header/Header';
 import Login from './pages/Login';
 import Cadastro from './pages/Cadastro';
 import Carrinho from './pages/Carrinho';
-import Produto from './pages/Produto';
+import Produto from './components/Livros/Livros';
 import Pesquisa from './pages/Pesquisa';
 import Dashboard from './pages/Dashboard';
 
