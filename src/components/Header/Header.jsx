@@ -1,7 +1,8 @@
 import React, { useContext } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 
 import { Context } from '../../context/AuthContext';
+import { PesquisaContext } from '../../context/PesquisaContext';
 import { useCart } from '../Carrinho/Cart';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,8 +13,15 @@ import { Container, Wrapper, Left, Center, Botoes } from './styles';
 import './header.scss';
 
 function Header() {
-  const items = useCart();
   const { autenticado, handleLogout } = useContext(Context);
+  const { handlePesquisa } = useContext(PesquisaContext);
+  const items = useCart();
+  const navigate = useNavigate();
+
+  const handleSubmit = event => {
+    event.preventDefault();
+    navigate('/pesquisa');
+  }
   
   return (
     <Container>
@@ -25,8 +33,11 @@ function Header() {
         </Left>
 
         <Center>
-          <form className="formulario">
-            <input className="pesquisar" type="search" placeholder="O que você procura?" aria-label="Search"/>
+          <form className="formulario" onSubmit={handleSubmit}>
+            <input
+              className="pesquisar" type="search" placeholder="Pesquise pelo seu livro" aria-label="Search"
+              onChange={handlePesquisa}
+            />
             <button className="lupa" type="submit"><FontAwesomeIcon icon={faSearch} /></button>
           </form>
         </Center>

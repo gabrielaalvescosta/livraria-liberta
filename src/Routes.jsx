@@ -10,6 +10,7 @@ import Carrinho from './pages/Carrinho';
 import Produto from './pages/Produto';
 import Pesquisa from './pages/Pesquisa';
 import Dashboard from './pages/Dashboard';
+import EditarConta from './pages/EditarConta';
 
 function PrivateRoute({ children }) {
   const { loading, autenticado } = useContext(Context);
@@ -33,6 +34,7 @@ function CustomRoutes() {
       <Route path="/carrinho" element={<Carrinho />} />
       <Route path="/produto/:idLivro" element={<Produto />} />
       <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+      <Route path="/dashboard/editar" element={<PrivateRoute><EditarConta /></PrivateRoute>} />
       <Route path="/pesquisa" element={<Pesquisa />} />
       <Route path="/cadastro" element={<Cadastro />} />
     </Routes>

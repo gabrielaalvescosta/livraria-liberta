@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import { buscaUsuarioPeloId } from '../services/usuarioApi';
 
 import {  
@@ -23,6 +25,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 function Dashboard() {
   const [usuario, setUsuario] = useState({});
   const [isLoaded, setIsLoaded] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleBuscaUsuario = async () => {
@@ -38,6 +41,10 @@ function Dashboard() {
     }
     handleBuscaUsuario();
   }, []);
+
+  const handleEditarPerfil = () => {
+    navigate('/dashboard/editar');
+  }
   
   if (!isLoaded) {
     return <Loading />;
@@ -54,12 +61,12 @@ function Dashboard() {
           <h3>{usuario.nome}</h3>
         </DadosPerfil>
       </Perfil>
-    
+
       <Dados>
         <TopoPerfil>
           <h2>Meus dados</h2>
           <EditaPerfil>
-            <button type="button">
+            <button type="button" onClick={handleEditarPerfil}>
               <FontAwesomeIcon icon={faEdit} />
             </button>
           </EditaPerfil>

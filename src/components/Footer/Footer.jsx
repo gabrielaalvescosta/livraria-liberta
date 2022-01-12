@@ -2,9 +2,17 @@ import React from 'react';
 import './footer.scss'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCcVisa, faCcAmex, faCcMastercard, faCcPaypal, faCcAmazonPay, faCcStripe, faCcDinersClub, faCcDiscover, faInstagram, faFacebook, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import {
+  faCcVisa, faCcAmex, faCcMastercard, faCcPaypal, faCcAmazonPay, faCcStripe,
+  faCcDinersClub, faCcDiscover, faInstagram, faFacebook, faTwitter,
+} from '@fortawesome/free-brands-svg-icons';
 
-import Logo  from '../../assets/Logo';
+import Logo from '../../assets/Logo';
+
+import ebitImg from '../../assets/ebit.png';
+import premioEbitImg from '../../assets/selo-premio-ebit.png';
+import sslSiteSeguroImg from '../../assets/selo-ssl-site-seguro.png';
+import visaImg from '../../assets/verified-by-visa.png';
 
 export default function Footer() {
  
@@ -32,11 +40,11 @@ export default function Footer() {
                         </h4>
                         <div className="selos-do-site">
                             <div className="verificacao-do-site">
-                                <img src={"image/ebit.png"} alt="imagem do selo ebit"/>
-                                <img src={"image/selo-premio-ebit.png"} alt="imagem do selo do premio ebit"/>
+                                <img src={ebitImg} alt="Imagem do selo ebit"/>
+                                <img src={premioEbitImg} alt="Imagem do selo do premio ebit"/>
                                 <div className="verificacao-do-site-II">
-                                    <img src={"image/verified-by-visa.png"} alt="imagem de verificação pela visa"/>
-                                    <img src={"image/selo-ssl_site_seguro.png"} alt="imagem do selo de segurança do site"/>
+                                    <img src={sslSiteSeguroImg} alt="imagem de verificação pela visa"/>
+                                    <img src={visaImg} alt="imagem do selo de segurança do site"/>
                                 </div>
                             </div>
                         </div>
