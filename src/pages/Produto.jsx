@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import CardLivro from '../components/CardLivro/CardLivro';
 import Loading from '../components/Loading/Loading';
 import { buscaLivroPeloId, buscaLivros } from '../services/livroApi';
 import Carrossel from '../components/Carrossel/Carrossel';
-import '../components/Livros/livros.css'
+import ButtonCompra from '../components/ButtonCompra/ButtonCompra'
+import '../components/Livros/livros.scss'
 
 function Produto() {
   const { idLivro } = useParams();  
@@ -47,14 +47,17 @@ function Produto() {
           <img src={livro.url_img}/>
       </div>
       <div className="apresentacao-do-livro">
-            <div className="foto-do-livro">
-            <img src={livro.url_img}/>
-            </div>
-            <section>
-            <h6>{livro.categoria}</h6>
-            <h1>{livro.titulo}</h1>
-            <h2>{livro.preco}</h2>
-        </section>
+        <section className="apresentacao-do-livro-partI">
+          <div className="foto-do-livro">
+              <img src={livro.url_img}/>
+          </div>
+              <section>
+              <h6>{livro.categoria}</h6>
+              <h1>{livro.titulo}</h1>
+              <h2>{livro.preco}</h2>
+              <ButtonCompra/>
+            </section>
+        </section>        
         <section className="informacoes-do-livro">
               <h2>Informações do livro</h2>
               <p>{livro.descricao}</p>
