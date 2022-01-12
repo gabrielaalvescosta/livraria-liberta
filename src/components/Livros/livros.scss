@@ -61,6 +61,20 @@
     font-size: 2rem;
 }
 
+// ESTILO DA PÁGINA DE PESQUISA //
+
+
+.lista-de-livros{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.lista-de-itens{
+    margin: 2% 1% 2% 1%;
+}
+
 @media(max-width: 800px) {
 
     .apresentacao-do-livro, .ficha-tecnica-do-livro{
@@ -82,4 +96,7 @@
         font-size: 1.5rem;
     }
 
+    .lista-de-livros{
+        flex-direction: column;
+    }
   }
