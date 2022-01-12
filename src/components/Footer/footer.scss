@@ -1,0 +1,125 @@
+.body-footera{
+    background-color: white;
+    margin: 4em 0 0 0;
+    
+}
+
+.pagamento-seguranca, .bandeira-cartoes, .verificacao-do-site, .navbar-footer nav, .navbar-footer nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    color: #757575;
+    text-align: center;
+}
+
+.pagamento-seguranca{
+    align-items: flex-start;
+    padding: 3% 10% 3% 10%;
+    background: white;
+}
+
+.pagamento {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pagamento h4, .seguranca h4{
+    text-align: left;
+    text-transform: uppercase;
+    padding: 2em 0;
+}
+
+.bandeira-cartoes{
+    width: 250px;
+    flex-wrap: wrap;
+}
+
+.bandeira-cartoes img{
+    width: 50px;
+    padding: 0px 7px 0px 7px;
+}
+
+.selos-do-site{
+    width: 260px;
+}
+
+.verificacao-do-site .verificacao-do-site-II{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 70px;
+    filter: saturate(0.1);
+
+    &:hover {
+      filter: saturate(1);
+
+  }
+}
+
+.verificacao-do-site img, .verificacao-do-site div img{
+    width: 70px;
+    filter: saturate(0.1);
+
+    &:hover {
+        filter: saturate(1);
+
+    }
+
+}
+
+.informacoes-juridicas-e-redes{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar-footer nav{
+    background-color: #a0f2db;
+    padding: 2% 0% 2% 0%;
+}
+
+.navbar-footer nav ul{
+    background-color: #a0f2db;
+    width: 60%;
+}
+
+.navbar-footer li{
+    color: var(--clr-preto);
+    text-transform: uppercase;
+}
+
+.rodape{
+    background-color: #c2f2e9;
+    color: #236e7b;
+    padding: 2em 0;
+    font-size: small;
+}
+
+@media(max-width: 1010px) {
+    .pagamento-seguranca{
+        flex-direction: column;
+        align-items: center;
+        padding:1% 1% 7% 1%;
+    }
+    .navbar-footer nav, .navbar-footer nav ul {
+        flex-direction: column;
+        justify-content: space-around;
+        padding: initial;
+        padding: 2em 0;
+        line-height: 2;
+    }
+
+    .informacoes-juridicas-e-redes{
+        align-items: center;
+    }
+    .informacoes-juridicas{
+        width: 70%;
+    }
+
+    .logotipo-rodape {
+        position: relative;
+        left: 30px;
+    }
+}
