@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
-import Loading from '../components/Loading/Loading';
 import { buscaLivroPeloId, buscaLivros } from '../services/livroApi';
+import padronizaPreco from '../utils/padronizaPreco';
+
+import Loading from '../components/Loading/Loading';
 import Carrossel from '../components/Carrossel/Carrossel';
-import ButtonCompra from '../components/ButtonCompra/ButtonCompra'
-import '../components/Livros/livros.scss'
+import ButtonCompra from '../components/ButtonCompra/ButtonCompra';
+
+import '../components/Livros/livros.scss';
 
 function Produto() {
   const { idLivro } = useParams();  
@@ -42,88 +45,72 @@ function Produto() {
   }
 
   return (
-   <div className="body-produto">
-     <section>
-     <div className="imagem-cabecalho">
-          <img src={livro.url_img}/>
-      </div>
-      <div className="apresentacao-do-livro">
-        <section className="apresentacao-do-livro-partI">
-          <div className="foto-do-livro">
-              <img src={livro.url_img}/>
-          </div>
-              <section>
+    <div className="body-produto">
+      <section>
+        <div className="imagem-cabecalho">
+          <img src={livro.url_img} alt={`Capa do livro ${livro.titulo}`} />
+        </div>
+        <div className="apresentacao-do-livro">
+          <section className="apresentacao-do-livro-partI">
+            <div className="foto-do-livro">
+              <img src={livro.url_img} alt={`Capa em tamanho maior do livro ${livro.titulo}`} />
+            </div>
+            <section>
               <h6>{livro.categoria}</h6>
               <h1>{livro.titulo}</h1>
-              <h2>{livro.preco}</h2>
-              <ButtonCompra/>
+              <h2>{padronizaPreco(livro.preco)}</h2>
+              <ButtonCompra livro={livro} />
             </section>
-        </section>        
-        <section className="informacoes-do-livro">
-              <h2>Informações do livro</h2>
-              <p>{livro.descricao}</p>
-        </section>
+          </section>
+          <section className="informacoes-do-livro">
+            <h2>Informações do livro</h2>
+            <p>{livro.descricao}</p>
+          </section>
         </div>
-            <div className="ficha-tecnica-do-livro">
-                <h2>
-                    Ficha técnica
-                </h2>
-                <div className="ficha-tecnica-do-livro-informacoes">
-                  <div>
-                    <h4>
-                      ISBN:
-                    </h4>
-                    <p>{livro.ISBN}</p>
-                  </div>
-                  <hr/>
-                  <div>
-                    <h4>
-                      Código de barras:
-                    </h4>
-                    <p>{livro.ISBN} - {livro.id_livro}</p>
-                  </div>
-                  <hr/>
-                  <div>
-                    <h4>
-                      Autor:
-                    </h4>
-                    <p>{livro.autor}</p>
-                  </div>
-                  <hr/>
-                  <div>
-                    <h4>
-                      Quantidade de Páginas:
-                    </h4>
-                    <p>{livro.paginas}</p>
-                  </div>
-                  <hr/>
-                  <div>
-                    <h4>
-                      Editora:
-                    </h4>
-                    <p>{livro.editora}</p>
-                  </div>
-                  <hr/>
-                  <div>
-                    <h4>
-                      Genero:
-                    </h4>
-                    <p>{livro.categoria}</p>
-                  </div>
-                </div>
-              </div>
-     </section>
-      
-        <section className="parte-do-carrossel">
-            <h4 className="titulo-relacionados">
-                Quem comprou esse, também viu:
-            </h4>
-            {console.log(livro, livrosRelacionados)}
-            <Carrossel livros={livrosRelacionados} />
-        </section>
-   </div>
-    
-  )
+        <div className="ficha-tecnica-do-livro">
+          <h2>Ficha técnica</h2>
+          <div className="ficha-tecnica-do-livro-informacoes">
+            <div>
+              <h4>ISBN:</h4>
+              <p>{livro.ISBN}</p>
+            </div>
+            <hr/>
+            <div>
+              <h4>Código de barras:</h4>
+              <p>{livro.ISBN} - {livro.id_livro}</p>
+            </div>
+            <hr/>
+            <div>
+              <h4>Autor:</h4>
+              <p>{livro.autor}</p>
+            </div>
+            <hr/>
+            <div>
+              <h4>Quantidade de Páginas:</h4>
+              <p>{livro.paginas}</p>
+            </div>
+            <hr/>
+            <div>
+              <h4>Editora:</h4>
+              <p>{livro.editora}</p>
+            </div>
+            <hr/>
+            <div>
+              <h4>Genero:</h4>
+              <p>{livro.categoria}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+          
+      <section className="parte-do-carrossel">
+        <h4 className="titulo-relacionados">
+          Quem comprou esse, também viu:
+        </h4>
+        <Carrossel livros={livrosRelacionados} />
+      </section>
+    </div>
+  );
 }
 
 export default Produto;

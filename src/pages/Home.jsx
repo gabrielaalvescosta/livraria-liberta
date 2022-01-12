@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
+import { buscaLivros } from '../services/livroApi';
+
 import Carrossel from '../components/Carrossel/Carrossel';
 import Categorias from '../components/Categorias/Categorias';
 import Slideshow from '../components/Slideshow/Slideshow';
 import { Titulo, Barra } from '../components/Headings/styles';
-import { buscaLivros } from '../services/livroApi';
 import { Main } from '../components/Main/styles';
+import Loading from '../components/Loading/Loading';
 
 import literaturaJuvenil from '../assets/literatura-juvenil.jpg';
 import slideShow from '../assets/slideshow.jpg';
-import Loading from '../components/Loading/Loading';
 
 const fotos = [ literaturaJuvenil, slideShow ];
 

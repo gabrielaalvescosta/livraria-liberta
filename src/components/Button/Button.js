@@ -28,6 +28,9 @@ export const Button = styled.button `
         ${props => props.azul && css`
         background: #00EAD5;
         `}
+        ${props => props.deletar && css`
+        background-color: #cf000f;
+        `}
         
 `
 

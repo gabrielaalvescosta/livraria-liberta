@@ -30,3 +30,12 @@ export async function atualizaUsario(id, usuario) {
     return erro.response.data;
   }
 }
+
+export async function deletaUsario(id,) {
+  try {
+    const res = await api.delete(`/api/usuario/${id}`);
+    return res.data;
+  } catch(erro) {
+    return erro.response.data;
+  }
+}

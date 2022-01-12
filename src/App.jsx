@@ -1,7 +1,9 @@
+import React from 'react';
+
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
-import CustomRoutes from './Routes';
+import CustomRoutes from './routes';
 
 function App() {
   return (

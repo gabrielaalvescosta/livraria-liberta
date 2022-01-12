@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import verificaSenha from '../utils/verificaSenha';
 import toastOptions from '../utils/toastOptions';
 import { buscaUsuarioPeloId, atualizaUsario } from '../services/usuarioApi';
+import { Context } from '../context/AuthContext';
 
 import Loading from '../components/Loading/Loading';
 import { Input, LabelInput } from '../components/Input/Input';
@@ -15,6 +16,7 @@ import { Main } from '../components/Main/styles';
 import { Titulo, Barra } from '../components/Headings/styles';
 
 function EditarConta() {
+  const { handleDeletaConta } = useContext(Context);
   const [usuario, setUsuario] = useState({});
   const [confirmaSenha, setConfirmaSenha] = useState('');
   const [isLoaded, setIsLoaded] = useState(false);
@@ -82,6 +84,23 @@ function EditarConta() {
     }
   }
 
+  let cliquesParaDeletar = 0;
+
+  const handleDeletarConta = async (event) => {
+    cliquesParaDeletar++;
+    
+    if (cliquesParaDeletar === 1) {
+      event.target.textContent = 'Clique novamente';
+      setTimeout(() => {
+        event.target.textContent = 'Deletar Conta';
+        cliquesParaDeletar = 0;
+      }, 3000);
+      return;
+    }
+
+    handleDeletaConta(usuario.id_usuario);
+  }
+
   if (!isLoaded) {
     return <Loading />;
   }
@@ -125,6 +144,10 @@ function EditarConta() {
           
           <Button type="submit">Atualizar</Button>
         </form>
+        <LabelInput>Área de perigo:</LabelInput>
+        <Button type="button" deletar onClick={handleDeletarConta}>
+          Deletar Conta
+        </Button>
       </BoxCadastro>
     </Main>
   );

@@ -6,6 +6,7 @@ import toastOptions from '../../utils/toastOptions';
 
 import api from '../../services/api';
 import { logaUsuario, deslogaUsuario } from '../../services/authApi';
+import { deletaUsario } from '../../services/usuarioApi';
 
 import 'react-toastify/dist/ReactToastify.min.css';
 
@@ -25,7 +26,7 @@ function useAuth() {
     setLoading(false);
   }, []);
 
-  const handleLogin = async (usuario) => {
+  const handleLogin = async usuario => {
     const id = toast.loading('Autenticando...', toastOptions);
 
     const res = await logaUsuario(usuario);
@@ -61,9 +62,8 @@ function useAuth() {
 
     await deslogaUsuario();
     setAutenticado(false);
-    localStorage.removeItem('token',);
+    localStorage.removeItem('token');
     localStorage.removeItem('idUsuario');
-    // Isso só é definido uma vez quando o usuário loga.
     api.defaults.headers.Authorization = undefined;
 
     // Mostra mensagem.
@@ -77,7 +77,37 @@ function useAuth() {
     navigate('/login');
   }
 
-  return { loading, autenticado, handleLogin, handleLogout };
+  const handleDeletaConta = async idUsuario => {
+    const id = toast.loading('Deletando conta...', toastOptions);
+
+    const res = await deletaUsario(idUsuario);
+
+    if (res.erro) {
+      toast.update(id, {
+        ...toastOptions,
+        render: res.msg,
+        type: 'error',
+        isLoading: false,
+      });
+    } else {
+      await deslogaUsuario();
+      setAutenticado(false);
+      localStorage.removeItem('token');
+      localStorage.removeItem('idUsuario');
+      api.defaults.headers.Authorization = undefined;
+      
+      toast.update(id, {
+        ...toastOptions,
+        render: 'Conta deletada com sucesso!',
+        type: 'success',
+        isLoading: false,
+      });
+
+      navigate('/');
+    }
+  }
+
+  return { loading, autenticado, handleLogin, handleLogout, handleDeletaConta };
 }
 
 export default useAuth;
