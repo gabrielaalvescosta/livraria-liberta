@@ -1,13 +1,15 @@
 import React from 'react';
+
 import loading from '../../assets/loading.svg';
+
 import './loading.scss';
 
-const Loading = () => {
-    return (
-        <div className="fade">
-            <img src={loading} />
-        </div>
-    );
+function Loading() {
+  return (
+    <div className="fade">
+      <img src={loading} alt="Imagem de loading" />
+    </div>
+  );
 }
 
 export default Loading;
