@@ -6,6 +6,10 @@ import { PesquisaContext } from '../context/PesquisaContext';
 
 import Loading from '../components/Loading/Loading';
 
+import CardLivro from '../components/CardLivro/CardLivro';
+
+import '../components/Livros/livros.scss'
+
 function Pesquisa() {
   const { pesquisa } = useContext(PesquisaContext);
   const [livros, setLivros] = useState([]);
@@ -37,7 +41,18 @@ function Pesquisa() {
 
   return (
     <div>
-      {console.log(livrosFiltrados)}
+      <section className='body-pesquisa'>
+      <ul className='lista-de-livros'>
+          {livrosFiltrados.map((livro)=>{
+            return(
+              <li className='lista-de-itens'>
+                <CardLivro livro={livro}/>
+              </li>
+            )
+          }
+          )}
+        </ul>
+      </section>
     </div>
   );
 }
