@@ -8,6 +8,10 @@ import Loading from '../components/Loading/Loading';
 
 import CardLivro from '../components/CardLivro/CardLivro';
 
+import { Titulo, Barra } from '../components/Headings/styles';
+
+import { Main } from '../components/Main/styles';
+
 import '../components/Livros/livros.scss'
 
 function Pesquisa() {
@@ -41,7 +45,12 @@ function Pesquisa() {
 
   return (
     <div>
-      <section className='body-pesquisa'>
+      <Main>
+      <Titulo>
+        Sua pesquisa retornou {livrosFiltrados.length} itens
+      </Titulo>
+
+      <Barra/>
       <ul className='lista-de-livros'>
           {livrosFiltrados.map((livro)=>{
             return(
@@ -52,7 +61,7 @@ function Pesquisa() {
           }
           )}
         </ul>
-      </section>
+      </Main>
     </div>
   );
 }
