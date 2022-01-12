@@ -5,6 +5,8 @@ import { buscaLivroPeloId, buscaLivros } from '../services/livroApi';
 import padronizaPreco from '../utils/padronizaPreco';
 
 import Loading from '../components/Loading/Loading';
+import { Main } from '../components/Main/styles';
+import { Titulo, Barra } from '../components/Headings/styles';
 import Carrossel from '../components/Carrossel/Carrossel';
 import ButtonCompra from '../components/ButtonCompra/ButtonCompra';
 
@@ -104,10 +106,11 @@ function Produto() {
       </section>
           
       <section className="parte-do-carrossel">
-        <h4 className="titulo-relacionados">
-          Quem comprou esse, também viu:
-        </h4>
-        <Carrossel livros={livrosRelacionados} />
+        <Main carroselMob>
+          <Titulo>Quem comprou esse, também viu:</Titulo>
+          <Barra />
+          <Carrossel livros={livrosRelacionados} />
+        </Main>
       </section>
     </div>
   );

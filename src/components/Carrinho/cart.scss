@@ -37,6 +37,7 @@
 
 .acoes-carrinho {
     display: flex;
+    gap: 15px;
 
     @media(max-width: 600px) {
         display: flex;

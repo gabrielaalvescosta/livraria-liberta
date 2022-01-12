@@ -67,8 +67,8 @@ function Carrinho() {
           />
         ))}
 
-        <p className="total"> Total: {" "}
-          {padronizaPreco(totalPrice)}
+        <p className="total">
+          Total: {padronizaPreco(totalPrice)}
         </p>
 
         <div className="acoes-carrinho">
