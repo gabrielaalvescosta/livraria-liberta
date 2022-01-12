@@ -25,13 +25,15 @@ export const Dados = styled.div `
         }
 `
 
-export const FundoProfile = styled.div `
+export const FundoProfile = styled.img `
     width: 100%;
     background: #ddd;
     position: absolute;
     height: 120px;
     z-index: -5;
     margin: 0 auto;
+    object-fit: cover;
+    filter: blur(20px);
 `
 
 export const Perfil = styled.div `
@@ -49,7 +51,7 @@ export const Perfil = styled.div `
     
 `
 
-export const FotoPerfil = styled.div `
+export const FotoPerfil = styled.img `
     width: 250px;
     height: 250px;
     border-radius: 50%;

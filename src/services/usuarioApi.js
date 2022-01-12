@@ -1,10 +1,17 @@
 import api from "./api";
 
-import axios from 'axios';
+export async function buscaUsuarioPeloId(id) {
+  try {
+    const res = await api.get(`/api/usuario/${id}`);
+    return res.data;
+  } catch (err) {
+    return err.response.data;
+  }
+}
 
 export async function criaUsuario(usuario) {
   try {
-    const res = await axios.post('/api/usuario', usuario, {
+    const res = await api.post('/api/usuario', usuario, {
       headers: { 'Content-Type': 'application/json' },
     });
     return res.data;
@@ -13,11 +20,13 @@ export async function criaUsuario(usuario) {
   }
 }
 
-export async function buscaUsuarioPeloId(id) {
+export async function atualizaUsario(id, usuario) {
   try {
-    const res = await api.get(`/api/usuario/${id}`);
+    const res = await api.patch(`/api/usuario/${id}`, usuario, {
+      headers: { 'Content-Type': 'application/json' },
+    });
     return res.data;
-  } catch (err) {
-    return err.response.data;
+  } catch(erro) {
+    return erro.response.data;
   }
 }

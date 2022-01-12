@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
+import toastOptions from '../../utils/toastOptions';
+
 import api from '../../services/api';
 import { logaUsuario, deslogaUsuario } from '../../services/authApi';
 
@@ -11,12 +13,6 @@ function useAuth() {
   const [autenticado, setAutenticado] = useState(false);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  const toastOptions = {
-    position: 'bottom-center',
-    autoClose: 3000,
-    pauseOnHover: true,
-    draggable: true,
-  };
 
   useEffect(() => {
     const token = localStorage.getItem('token');

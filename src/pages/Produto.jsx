@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import CardLivro from '../components/CardLivro/CardLivro';
+
 import Loading from '../components/Loading/Loading';
 import { buscaLivroPeloId, buscaLivros } from '../services/livroApi';
 
