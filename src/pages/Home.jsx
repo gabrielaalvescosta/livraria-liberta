@@ -32,7 +32,7 @@ function Home() {
   }, []);
   
   if (!isLoaded) {
-    return <Loading/>
+    return <Loading />;
   }
 
   const maisVendidos = [...livros].sort((livro1, livro2) => {

@@ -51,6 +51,11 @@
     justify-content: space-between;
     height: 70px;
     filter: saturate(0.1);
+
+    &:hover {
+      filter: saturate(1);
+
+  }
 }
 
 .verificacao-do-site img, .verificacao-do-site div img{
