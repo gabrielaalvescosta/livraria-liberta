@@ -1,0 +1,18 @@
+.body-produto section{
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    align-items: center;
+}
+
+.apresentacao-do-livro, .ficha-tecnica-do-livro{
+    background-color: white;
+    margin: 10% 10% 10% 20%;
+    padding: 5% 0% 5% 5%;
+    border-radius: 5%;
+}
+
+.ficha-tecnica-do-livro{
+    margin: initial;
+    padding: initial;
+}
