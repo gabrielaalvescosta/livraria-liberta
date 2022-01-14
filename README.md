@@ -6,9 +6,12 @@
 
 A Liberta é um lugar para vender ideias e conhecimento através dos livros. Libertar-se em busca de conhecer, descobrir e pensar. Projeto final do módulo 5 da @resilia-br realizado em ReactJS e Sass.
 
+
 <p align="center">
 <img src="./projeto-modulo-5.gif" alt="projeto-modulo-5.gif">
 </p>
+
+
 ## Livraria Liberta (back-end)
 
 Você pode acessar o back-end do projeto do módulo 5 [aqui](https://github.com/willy-r/livraria-liberta-api) desenvolvido por todos, organizado pelo [William Rodrigues](https://github.com/willy-r).
