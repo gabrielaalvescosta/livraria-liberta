@@ -4,7 +4,12 @@
 
 # Livraria Liberta
 
-A Liberta é um lugar para vender ideias e conhecimento através dos livros. Libertar-se em busca de conhecer, descobrir e pensar. Projeto final do módulo 5 da @resilia-br realizado em ReactJS.
+A Liberta é um lugar para vender ideias e conhecimento através dos livros. Libertar-se em busca de conhecer, descobrir e pensar. Projeto final do módulo 5 da @resilia-br realizado em ReactJS e Sass.
+
+
+<p align="center">
+<img src="./projeto-modulo-5.gif" alt="projeto-modulo-5.gif">
+</p>
 
 
 ## Livraria Liberta (back-end)
