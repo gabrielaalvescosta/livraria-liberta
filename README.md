@@ -8,7 +8,9 @@ A Liberta é um lugar para vender ideias e conhecimento através dos livros. Lib
 
 
 <p align="center">
-<img src="./projeto-modulo-5.gif" alt="projeto-modulo-5.gif">
+<img src="./projeto-modulo-5.gif" alt="Versão Web"/>
+  <img src=".liberta-mobile.gif?raw=true" height="302" alt="Versão mobile"/>
+  
 </p>
 
 
