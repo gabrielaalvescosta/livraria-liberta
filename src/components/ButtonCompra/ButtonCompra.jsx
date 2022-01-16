@@ -1,21 +1,25 @@
-import React from 'react';
+import React from "react";
 
-import { useDispatchCart } from '../Carrinho/Cart';
+import { useDispatchCart } from "../Carrinho/Cart";
 
-import '../CardLivro/card.scss';
+import { StyledButtonCompra } from "./styles";
 
 function ButtonCompra({ livro }) {
   const dispatch = useDispatchCart();
-  
-  const addToCart = item => {
-    dispatch({type: "ADD", item});
-  }
-  
+
+  const handleAddToCart = (item) => {
+    dispatch({ type: "ADD", item });
+  };
+
+  const handleOnClick = () => {
+    handleAddToCart(livro);
+  };
+
   return (
-    <button class="botao-comprar" onClick={() => addToCart(livro)}>
+    <StyledButtonCompra onClick={handleOnClick} title="Adicionar ao carrinho">
       Comprar
-    </button>
+    </StyledButtonCompra>
   );
 }
-  
+
 export default ButtonCompra;

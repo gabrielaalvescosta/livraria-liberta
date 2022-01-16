@@ -2,10 +2,9 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 export const StyledCardLivro = styled.figure`
-  --clr-card: #e2e2e2;
+  --clr-card: #ebebeb;
   --clr-preco: #00879b;
   --common-radius: 2rem;
-  --common-border: 1px solid var(--clr-card);
 
   display: flex;
   flex-direction: column;
@@ -13,22 +12,18 @@ export const StyledCardLivro = styled.figure`
   justify-content: center;
   flex: none;
   padding: 1.875rem;
-  margin: 0 1rem;
+  margin: 2em 0;
   width: 16.25rem;
   text-align: center;
   box-shadow: 5px 5px 10px 0 var(--clr-card);
-  background: #fff;
-  border: none;
-  border-radius: 2em;
-  margin: 2em 0;
-  box-shadow: 5px 5px 10px 0 #ebebeb;
+  background-color: var(--clr-branco);
+  border-radius: var(--common-radius);
 
   img {
     display: block;
     width: 100%;
     height: 17.5rem;
     border-radius: var(--common-radius);
-    border: var(--common-border);
     object-fit: cover;
     border: 3px solid #e3e3e3;
   }
@@ -63,6 +58,7 @@ export const StyledCardLivro = styled.figure`
 
 export const StyledCardButton = styled(Link)`
   --clr-border: #d9d9d9;
+
   padding: 1.2em;
   width: 100%;
   font-size: .9rem;

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import useInterval from '../../context/hooks/useInterval';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
@@ -7,7 +9,7 @@ import './slideshow.scss';
 
 function Slideshow({ imgs }) {
   const [index, setIndex] = useState(0);
-  
+
   useEffect(() => {
     setIndex(0);
   }, []);
@@ -27,6 +29,10 @@ function Slideshow({ imgs }) {
       setIndex(index - 1);
     }
   }
+
+  useInterval(() => {
+    next();
+  }, 5000);
 
   return (
     <div className="slideshow">

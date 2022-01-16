@@ -1,92 +1,89 @@
 .carrinho-container {
-    background: white;
-    border-radius: 2em;
-    width: 60vw;
-    margin: 2em auto;
-    padding: 3em;
+  background: var(--clr-branco);
+  border-radius: 2em;
+  width: 60vw;
+  margin: 2em auto;
+  padding: 3em;
 
-    @media(max-width: 920px) {
-        width: 75vw;
-        margin: 2.5em auto;
-        padding: 2.5em;
-        font-size: small;
-        }
+  @media (max-width: 920px) {
+    width: 75vw;
+    margin: 2.5em auto;
+    padding: 2.5em;
+    font-size: small;
+  }
 }
 
 .vazio {
-    margin: 3em 0;
-    text-align: center;
+  margin: 3em 0;
+  text-align: center;
 }
 
 .total {
-    margin: 3em 0;
-    text-align: right;
-    padding: 0 1em;
-    font-size: large;
+  margin: 3em 0;
+  text-align: right;
+  padding: 0 1em;
+  font-size: large;
 }
 
 .acoes-carrinho button {
-    padding: 0.75em 1em;
-    flex: 1;
-    border-radius: 2em;
-    margin: 0em 1em;
-    background: #e1ede9;
-    color: #0d0d0d;
-
+  padding: 0.75em 1em;
+  flex: 1;
+  border-radius: 2em;
+  margin: 0em 1em;
+  background-color: #e1ede9;
+  color: #0d0d0d;
 }
 
 .acoes-carrinho {
-    display: flex;
-    gap: 15px;
+  display: flex;
+  gap: 15px;
 
-    @media(max-width: 600px) {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-items: center;
-        }
+  @media (max-width: 600px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
 .item-carrinho {
-    display: flex;
-    padding: 1.5em 0;
-    align-items: center;
-    justify-content: flex-start;
-    line-height: 1.3;
-    border-bottom: 3px solid whitesmoke;
+  display: flex;
+  padding: 1.5em 0;
+  align-items: center;
+  justify-content: flex-start;
+  line-height: 1.3;
+  border-bottom: 3px solid whitesmoke;
 
-    @media(max-width: 600px) {
-        flex-direction: column;
-        }
-
+  @media (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 .item-carrinho h2 {
-    font-size: 1.3em;
-    margin: 0 0 0.25em 0;
-    line-height: 1.25;
-    font-weight: bold;
+  font-size: 1.3em;
+  margin: 0 0 0.25em 0;
+  line-height: 1.25;
+  font-weight: bold;
 }
 
 .item-carrinho h3 {
-    font-size: 1em;
-    color: #818181;
-    font-weight: 400;
+  font-size: 1em;
+  color: #818181;
+  font-weight: 400;
 }
 
 .imagem-item {
-    max-width: 100px;
-    flex: 1;
+  max-width: 100px;
+  flex: 1;
 }
 
 .item-descricao {
-    margin: 1em 2em;
-    flex: 4;
-    text-align: left;
+  margin: 1em 2em;
+  flex: 4;
+  text-align: left;
 }
 
 .preco-carrinho {
-    flex: 1;
-    text-align: center;
+  flex: 1;
+  text-align: center;
 }
-

@@ -145,7 +145,7 @@ function EditarConta() {
           <Button type="submit">Atualizar</Button>
         </form>
         <LabelInput>Área de perigo:</LabelInput>
-        <Button type="button" deletar onClick={handleDeletarConta}>
+        <Button vermelho type="button" onClick={handleDeletarConta}>
           Deletar Conta
         </Button>
       </BoxCadastro>
