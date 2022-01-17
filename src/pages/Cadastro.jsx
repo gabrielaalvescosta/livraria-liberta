@@ -34,7 +34,7 @@ function Cadastro() {
       setConfirmaSenha(input.value);
     } else {
       setData({
-        ...data, [event.target.name]: event.target.value,
+        ...data, [input.name]: input.value,
       });
     }
   }
@@ -79,7 +79,7 @@ function Cadastro() {
       <Titulo>Cadastro</Titulo>
       <Barra/>
       <BoxCadastro>
-        <form onSubmit={handleSubmit} className="cadastro">
+        <form onSubmit={handleSubmit}>
           <Input
             className="form" name="CPF" type="text" placeholder="CPF 00000000000" required
             onChange={handleOnChange}

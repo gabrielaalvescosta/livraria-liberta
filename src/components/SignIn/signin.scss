@@ -59,6 +59,11 @@
   margin: 0 0 0.5em 0;
   font-size: 0.9em;
   color: #666;
+  transition: 250ms;
+
+  &:hover {
+    color: #333;
+  }
 }
 
 .form {
@@ -70,8 +75,6 @@
   font: inherit;
   margin: 0 0 0.75em 0;
 }
-
-/* CADASTRO */
 
 .cadastro-senha {
   display: flex;

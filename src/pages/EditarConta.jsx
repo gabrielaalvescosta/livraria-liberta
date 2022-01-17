@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 
 import verificaSenha from '../utils/verificaSenha';
 import toastOptions from '../utils/toastOptions';
-import { buscaUsuarioPeloId, atualizaUsario } from '../services/usuarioApi';
+import { buscaUsuarioPeloId, atualizaUsuario } from '../services/usuarioApi';
 import { Context } from '../context/AuthContext';
 
 import Loading from '../components/Loading/Loading';
@@ -61,7 +61,7 @@ function EditarConta() {
         isLoading: false,
       });
     } else {
-      const res = await atualizaUsario(usuario.id_usuario, usuario);
+      const res = await atualizaUsuario(usuario.id_usuario, usuario);
 
       if (res.erro) {
         toast.update(id, {

@@ -5,6 +5,7 @@ import { Context } from './context/AuthContext';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
+import RecuperarSenha from './pages/RecuperarSenha';
 import Cadastro from './pages/Cadastro';
 import Carrinho from './pages/Carrinho';
 import Produto from './pages/Produto';
@@ -31,6 +32,7 @@ function CustomRoutes() {
     <Routes>
       <Route exact path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/recuperar-senha" element={<RecuperarSenha />} />
       <Route path="/carrinho" element={<Carrinho />} />
       <Route path="/produto/:idLivro" element={<Produto />} />
       <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
