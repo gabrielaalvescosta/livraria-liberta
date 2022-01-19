@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import useInterval from '../../context/hooks/useInterval';
+import useInterval from '../../hooks/useInterval';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
