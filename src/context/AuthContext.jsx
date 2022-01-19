@@ -2,16 +2,32 @@ import React, { createContext } from 'react';
 
 import useAuth from './hooks/useAuth';
 
-const Context = createContext();
+const AuthContext = createContext();
 
 function AuthProvider({ children }) {
-  const { loading, autenticado, handleLogin, handleLogout, handleDeletaConta } = useAuth();
+  const {
+    loading,
+    autenticado,
+    handleLogin,
+    handleLogout,
+    handleDeletaConta,
+    handleResetaSenha,
+  } = useAuth();
 
   return (
-    <Context.Provider value={{ loading, autenticado, handleLogin, handleLogout, handleDeletaConta }}>
+    <AuthContext.Provider
+      value={{
+        loading,
+        autenticado,
+        handleLogin,
+        handleLogout,
+        handleDeletaConta,
+        handleResetaSenha
+      }}
+    >
       {children}
-    </Context.Provider>
+    </AuthContext.Provider>
   );
 }
 
-export { Context, AuthProvider };
+export { AuthContext, AuthProvider };

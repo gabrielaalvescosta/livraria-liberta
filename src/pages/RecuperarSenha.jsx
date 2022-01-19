@@ -31,6 +31,8 @@ function RecuperarSenha() {
       type: 'success',
       isLoading: false,
     });
+
+    event.target.reset();
   }
 
   return (
@@ -38,7 +40,7 @@ function RecuperarSenha() {
       <Titulo>Recuperar senha</Titulo>
       <Barra/>
       <BoxCadastro>
-        <form className="cadastro" onSubmit={handleOnSubmit}>
+        <form onSubmit={handleOnSubmit}>
           <LabelInput>Digite seu email:</LabelInput>
           <Input
             className="form" name="email" type="email" placeholder="Email" required
@@ -46,18 +48,6 @@ function RecuperarSenha() {
           />
           <Button type="submit">Enviar</Button>
         </form>
-        
-        {/* <form>
-          <LabelInput>Digite sua nova senha:</LabelInput>
-          <Input
-            className="form" name="senha" type="password" placeholder="Senha" required
-          />
-          <Input
-            className="form" name="confirmaSenha" type="password" placeholder="Repita a senha" required
-          />
-          
-          <Button type="submit">Resetar senha</Button>
-        </form> */}
       </BoxCadastro>
     </Main>
   );

@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import verificaSenha from '../utils/verificaSenha';
 import toastOptions from '../utils/toastOptions';
 import { buscaUsuarioPeloId, atualizaUsuario } from '../services/usuarioApi';
-import { Context } from '../context/AuthContext';
+import { AuthContext } from '../context/AuthContext';
 
 import Loading from '../components/Loading/Loading';
 import { Input, LabelInput } from '../components/Input/Input';
@@ -16,7 +16,7 @@ import { Main } from '../components/Main/styles';
 import { Titulo, Barra } from '../components/Headings/styles';
 
 function EditarConta() {
-  const { handleDeletaConta } = useContext(Context);
+  const { handleDeletaConta } = useContext(AuthContext);
   const [usuario, setUsuario] = useState({});
   const [confirmaSenha, setConfirmaSenha] = useState('');
   const [isLoaded, setIsLoaded] = useState(false);

@@ -5,14 +5,13 @@ import { toast } from 'react-toastify';
 
 import toastOptions from '../utils/toastOptions';
 import verificaSenha from '../utils/verificaSenha';
+
 import { Input, LabelInput } from '../components/Input/Input';
 import { Button } from '../components/Button/Button';
 import { BoxCadastro } from '../components/SignIn/styles';
 import { Main } from '../components/Main/styles';
 import { Titulo, Barra } from '../components/Headings/styles';
 import { criaUsuario } from '../services/usuarioApi';
-
-import 'react-toastify/dist/ReactToastify.min.css';
 
 import '../components/SignIn/signin.scss';
 

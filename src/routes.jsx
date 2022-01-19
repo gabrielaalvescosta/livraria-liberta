@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 
-import { Context } from './context/AuthContext';
+import { AuthContext } from './context/AuthContext';
 
 import Home from './pages/Home';
 import Login from './pages/Login';
 import RecuperarSenha from './pages/RecuperarSenha';
+import ResetarSenha from './pages/ResetarSenha';
 import Cadastro from './pages/Cadastro';
 import Carrinho from './pages/Carrinho';
 import Produto from './pages/Produto';
@@ -14,7 +15,7 @@ import Dashboard from './pages/Dashboard';
 import EditarConta from './pages/EditarConta';
 
 function PrivateRoute({ children }) {
-  const { loading, autenticado } = useContext(Context);
+  const { loading, autenticado } = useContext(AuthContext);
 
   if (loading) {
     return null;
@@ -33,6 +34,7 @@ function CustomRoutes() {
       <Route exact path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/recuperar-senha" element={<RecuperarSenha />} />
+      <Route path="/resetar-senha" element={<ResetarSenha />} />
       <Route path="/carrinho" element={<Carrinho />} />
       <Route path="/produto/:idLivro" element={<Produto />} />
       <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />

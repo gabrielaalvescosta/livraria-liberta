@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 
 import { Link } from 'react-router-dom';
 
-import { Context } from '../../context/AuthContext';
+import { AuthContext } from '../../context/AuthContext';
 
 import { BoxLogin } from './styles';
 import { Button, ButtonLink } from '../Button/Button';
@@ -13,7 +13,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import './signin.scss'
 
 function SignIn() {
-  const { handleLogin } = useContext(Context);
+  const { handleLogin } = useContext(AuthContext);
   const [dados, setDados] = useState({
     email: '',
     senha: '',

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 
-import { Context } from "../../context/AuthContext";
+import { AuthContext } from "../../context/AuthContext";
 import { PesquisaContext } from "../../context/PesquisaContext";
 import { useCart } from "../Carrinho/Cart";
 
@@ -18,7 +18,7 @@ import { Container, Wrapper, Left, Center, Botoes } from "./styles";
 import "./header.scss";
 
 function Header() {
-  const { autenticado, handleLogout } = useContext(Context);
+  const { autenticado, handleLogout } = useContext(AuthContext);
   const { handlePesquisa } = useContext(PesquisaContext);
   const items = useCart();
   const navigate = useNavigate();

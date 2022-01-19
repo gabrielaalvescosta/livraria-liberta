@@ -26,6 +26,19 @@ export async function enviaEmail(email) {
   }
 }
 
+export async function resetaSenha(resetInfo) {
+  try {
+    const res = await api.post('/api/auth/resetar-senha', resetInfo, {
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+    return res.data;
+  } catch (err) {
+    return err.response.data;
+  }
+}
+
 export async function deslogaUsuario() {
   try {
     await api.get('/api/auth/logout');

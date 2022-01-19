@@ -3,12 +3,11 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 import toastOptions from '../../utils/toastOptions';
+import verificaSenha from '../../utils/verificaSenha';
 
 import api from '../../services/api';
-import { logaUsuario, deslogaUsuario } from '../../services/authApi';
+import { logaUsuario, deslogaUsuario, resetaSenha } from '../../services/authApi';
 import { deletaUsario } from '../../services/usuarioApi';
-
-import 'react-toastify/dist/ReactToastify.min.css';
 
 function useAuth() {
   const [autenticado, setAutenticado] = useState(false);
@@ -107,7 +106,61 @@ function useAuth() {
     }
   }
 
-  return { loading, autenticado, handleLogin, handleLogout, handleDeletaConta };
+  const handleResetaSenha = async (senha, confirmaSenha, token) => {
+    console.log(senha, confirmaSenha);
+    const id = toast.loading('Atualizando senha...', toastOptions);
+    
+    if (!verificaSenha(senha, confirmaSenha)) {
+      toast.update(id, {
+        ...toastOptions,
+        render: 'As senhas precisam ser iguais.',
+        type: 'error',
+        isLoading: false,
+      });
+    } else {
+      const res = await resetaSenha({
+        token: token || undefined,
+        senha: senha,
+      });
+
+      if (res.erro) {
+        toast.update(id, {
+          ...toastOptions,
+          render: res.msg,
+          type: 'error',
+          isLoading: false,
+        });
+      } else {
+        // Caso o usuário esteja logado enquanto reseta a senha, desloga ele.
+        if (autenticado) {
+          await deslogaUsuario();
+          setAutenticado(false);
+          localStorage.removeItem('token');
+          localStorage.removeItem('idUsuario');
+          api.defaults.headers.Authorization = undefined;
+        }
+
+        toast.update(id, {
+          ...toastOptions,
+          render: res.msg,
+          type: 'success',
+          position: 'top-right',
+          isLoading: false,
+        });
+
+        navigate('/login');
+      }
+    }
+  }
+
+  return {
+    loading,
+    autenticado,
+    handleLogin,
+    handleLogout,
+    handleDeletaConta,
+    handleResetaSenha,
+  };
 }
 
 export default useAuth;
