@@ -5,8 +5,8 @@ import { toast } from 'react-toastify';
 
 import verificaSenha from '../utils/verificaSenha';
 import toastOptions from '../utils/toastOptions';
-import { buscaUsuarioPeloId, atualizaUsario } from '../services/usuarioApi';
-import { Context } from '../context/AuthContext';
+import { buscaUsuarioPeloId, atualizaUsuario } from '../services/usuarioApi';
+import { AuthContext } from '../context/AuthContext';
 
 import Loading from '../components/Loading/Loading';
 import { Input, LabelInput } from '../components/Input/Input';
@@ -16,7 +16,7 @@ import { Main } from '../components/Main/styles';
 import { Titulo, Barra } from '../components/Headings/styles';
 
 function EditarConta() {
-  const { handleDeletaConta } = useContext(Context);
+  const { handleDeletaConta } = useContext(AuthContext);
   const [usuario, setUsuario] = useState({});
   const [confirmaSenha, setConfirmaSenha] = useState('');
   const [isLoaded, setIsLoaded] = useState(false);
@@ -61,7 +61,7 @@ function EditarConta() {
         isLoading: false,
       });
     } else {
-      const res = await atualizaUsario(usuario.id_usuario, usuario);
+      const res = await atualizaUsuario(usuario.id_usuario, usuario);
 
       if (res.erro) {
         toast.update(id, {
@@ -145,7 +145,7 @@ function EditarConta() {
           <Button type="submit">Atualizar</Button>
         </form>
         <LabelInput>Área de perigo:</LabelInput>
-        <Button type="button" deletar onClick={handleDeletarConta}>
+        <Button vermelho type="button" onClick={handleDeletarConta}>
           Deletar Conta
         </Button>
       </BoxCadastro>

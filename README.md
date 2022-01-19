@@ -1,70 +1,76 @@
-# Getting Started with Create React App
+<p align="center">
+  <img src="./public/logo.png" alt="Logo da livraria Liberta" width="400px">
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Livraria Liberta
 
-## Available Scripts
+A Liberta é um lugar para vender ideias e conhecimento através dos livros. Libertar-se em busca de conhecer, descobrir e pensar. Esse é o projeto final do módulo 5 da @resilia-br.
 
-In the project directory, you can run:
+<p align="center">
+  <img src="./public/projeto-desktop.gif" alt="Liberta versão desktop"/>
+  <img src="./public/liberta-mobile.gif" height="302" alt="Liberta versão mobile"/>
+</p>
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Livraria Liberta (back-end)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Você pode acessar o back-end do projeto do módulo 5 [aqui](https://github.com/willy-r/livraria-liberta-api) desenvolvido por todos, organizado pelo [William Rodrigues](https://github.com/willy-r).
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Informações gerais
 
-### `npm run build`
+Para rodar esse projeto é necessário ter a versão **14+** do *NodeJS*.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Tecnologias utilizadas
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Essas são algumas das bibliotecas e frameworks utilizadas no projeto.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [NodeJS](https://nodejs.org/en/)
+- [ReactJS](https://reactjs.org/)
+- [styled-components](https://www.npmjs.com/package/styled-components)
+- [axios](https://www.npmjs.com/package/axios)
+- [node-sass](https://www.npmjs.com/package/node-sass)
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Rodar localmente
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+No terminal de sua escolha, clone o repositório:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone https://github.com/willy-r/livraria-liberta.git
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Vá até o diretório do projeto:
 
-## Learn More
+```bash
+cd livraria-liberta
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Instale as dependências:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm install
+```
 
-### Code Splitting
+Inicie o servidor local:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm start
+```
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Estado do projeto
 
-### Making a Progressive Web App
+**Em desenvolvimento...** 🚧
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Para fazer
 
-### Advanced Configuration
+- [ ] Página de recuperação de senha
+- [ ] Página para checkout do pagamento
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Grupo 10 & Autores
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [Gabriela Costa](https://github.com/gabrielaalvescosta)
+- [William Rodrigues](https://github.com/willy-r)
+- [Ana Karolina](https://github.com/kasvrol)

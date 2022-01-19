@@ -1,79 +1,65 @@
-/* HEADER.SCSS */
-
-
-/* PESQUISA */
-
-.d-flex, .formulario {
-        display: flex;
+.formulario {
+  display: flex;
 }
 
 .pesquisar {
-    width: 100%;
-    padding: 10px 15px;
-    color: #999;
-    border: 1px solid whitesmoke;
-    border-radius: 15px;
-    font-weight: 500;
-    font-family: var(--ff-principal);
+  width: 100%;
+  padding: 10px 15px;
+  color: #999;
+  border: 1px solid whitesmoke;
+  border-radius: 15px;
+  font-weight: 500;
+  font-family: var(--ff-principal);
 }
 
 .pesquisar:hover {
-    border: 1px solid white;
+  border: 1px solid var(--clr-branco);
 }
 
 .lupa {
-        background: none;
-        color: var(--clr-preto);
-        border: none;
-        position: relative;
-        left: -30px;
+  background: none;
+  color: var(--clr-preto);
+  border: none;
+  position: relative;
+  left: -30px;
 }
-
-
-
-/* BOTOES */
 
 .cadastre-se {
-        max-width: 120px;
-        display: flex;
-        font-family: var(--ff-principal);
-        align-items: center;
-        text-align: left;
-        background: transparent;
-        border: none;
-        cursor: pointer;
+  max-width: 120px;
+  display: flex;
+  font-family: var(--ff-principal);
+  align-items: center;
+  text-align: left;
+  background: transparent;
+  border: none;
+  cursor: pointer;
 }
 
-.fa-user, .fa-cart {
-        font-size: 2em !important;
-        margin: 0.5rem;
+.fa-user,
+.fa-cart {
+  font-size: 2em !important;
+  margin: 0.5rem;
 }
-
-/* CARRINHO */
 
 .carrinho-cont {
-        border-radius: 50%;
-        padding: 5px;
-        width: 24px;
-        text-align: center;
-        font-size: 0.9em;
-        font-family: var(--ff-principal);
-        font-weight: bold;
-        background: #d6fff3;
-        color: var(--clr-preto);
+  border-radius: 50%;
+  padding: 5px;
+  width: 24px;
+  text-align: center;
+  font-size: 0.9em;
+  font-family: var(--ff-principal);
+  font-weight: bold;
+  background: #d6fff3;
+  color: var(--clr-preto);
 }
 
-/* MEDIA QUERIES */
+@media (max-width: 1490px) {
+  .link-cadastre {
+    display: none;
+  }
 
-@media(max-width: 1490px) {
-        .link-cadastre {
-                display:none;
-        }
-
-        .iberta {
-                display: none;
-                max-width: 60px;
-              }
-
-      }
-      
+  .liberta {
+    display: none;
+    max-width: 60px;
+  }
+}

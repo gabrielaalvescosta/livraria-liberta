@@ -9,6 +9,8 @@ import { PesquisaProvider } from './context/PesquisaContext';
 
 import App from './App';
 
+import 'react-toastify/dist/ReactToastify.min.css';
+
 import './reset.scss';
 import './index.scss';
 
