@@ -20,7 +20,7 @@ export async function criaUsuario(usuario) {
   }
 }
 
-export async function atualizaUsario(id, usuario) {
+export async function atualizaUsuario(id, usuario) {
   try {
     const res = await api.patch(`/api/usuario/${id}`, usuario, {
       headers: { 'Content-Type': 'application/json' },

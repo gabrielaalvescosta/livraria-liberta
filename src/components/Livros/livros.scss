@@ -1,102 +1,103 @@
-.body-produto section{
-    display: flex;
-    flex-direction: column;
+.body-produto section {
+  display: flex;
+  flex-direction: column;
 }
 
-.imagem-cabecalho{
-    height: 220px;
+.imagem-cabecalho {
+  height: 220px;
 }
 
-.imagem-cabecalho img{
-    object-fit: cover;
-    width: 100%;
-    height: 200px;
-    object-position: 0 50%;
+.imagem-cabecalho img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+  object-position: 0 50%;
+  filter: blur(20px);
 }
 
-.foto-do-livro img{
-    margin-right: 10px;
+.foto-do-livro img {
+  margin-right: 10px;
 }
 
-.apresentacao-do-livro, .ficha-tecnica-do-livro{
-    margin: 10% 10% 5% 10%;
-    text-align: justify;
+.apresentacao-do-livro,
+.ficha-tecnica-do-livro {
+  margin: 10% 10% 5% 10%;
+  text-align: justify;
 }
 
-.ficha-tecnica-do-livro{
-    margin: 0% 10% 10% 10%;
-    background-color: white;
-    border-radius: 40px;
-    padding: 5% 5% 5% 5%;
+.ficha-tecnica-do-livro {
+  margin: 0% 10% 10% 10%;
+  background-color: white;
+  border-radius: 40px;
+  padding: 5% 5% 5% 5%;
 }
 
-.apresentacao-do-livro .apresentacao-do-livro-partI{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-around;
+.apresentacao-do-livro .apresentacao-do-livro-partI {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
 }
 
-.informacoes-do-livro{
-    background-color: white;
-    border-radius: 40px;
-    padding: 5% 5% 5% 5%;
-    margin-top: 5%;
+.informacoes-do-livro {
+  background-color: white;
+  border-radius: 40px;
+  padding: 5% 5% 5% 5%;
+  margin-top: 5%;
 }
 
-.apresentacao-do-livro-partI h6{
-    font-size: 1rem;
+.apresentacao-do-livro-partI h6 {
+  font-size: 1rem;
 }
 
-.apresentacao-do-livro-partI h1, .apresentacao-do-livro-partI h2{
-    font-size: 3rem;
+.apresentacao-do-livro-partI h1,
+.apresentacao-do-livro-partI h2 {
+  font-size: 3rem;
 }
 
-.apresentacao-do-livro-partI h2{
-    color: #05f2c7;
+.apresentacao-do-livro-partI h2 {
+  color: #05f2c7;
 }
 
-.titulo-relacionados{
-    padding-left: 10%;
-    font-size: 2rem;
+.titulo-relacionados {
+  padding-left: 10%;
+  font-size: 2rem;
 }
 
-// ESTILO DA PÁGINA DE PESQUISA //
-
-
-.lista-de-livros{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
+.lista-de-livros {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-.lista-de-itens{
-    margin: 2% 1% 2% 1%;
+.lista-de-itens {
+  margin: 2% 1% 2% 1%;
 }
 
-@media(max-width: 800px) {
-
-    .apresentacao-do-livro, .ficha-tecnica-do-livro{
-        margin: 1% 1% 1% 5%;
-    }
-    .apresentacao-do-livro .apresentacao-do-livro-partI{
-        flex-direction: column;
-    }
-
-    .foto-do-livro img{
-        margin-right: 0px;
-    }
-
-    .apresentacao-do-livro-partI h6{
-        font-size: 0.5rem;
-    }
-    
-    .apresentacao-do-livro-partI h1, .apresentacao-do-livro-partI h2{
-        font-size: 1.5rem;
-    }
-
-    .lista-de-livros{
-        flex-direction: column;
-    }
+@media (max-width: 800px) {
+  .apresentacao-do-livro,
+  .ficha-tecnica-do-livro {
+    margin: 1% 1% 1% 5%;
   }
+  .apresentacao-do-livro .apresentacao-do-livro-partI {
+    flex-direction: column;
+  }
+
+  .foto-do-livro img {
+    margin-right: 0px;
+  }
+
+  .apresentacao-do-livro-partI h6 {
+    font-size: 0.5rem;
+  }
+
+  .apresentacao-do-livro-partI h1,
+  .apresentacao-do-livro-partI h2 {
+    font-size: 1.5rem;
+  }
+
+  .lista-de-livros {
+    flex-direction: column;
+  }
+}

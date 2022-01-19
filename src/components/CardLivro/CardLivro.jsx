@@ -5,7 +5,6 @@ import padronizaPreco from '../../utils/padronizaPreco';
 import ButtonCompra from '../ButtonCompra/ButtonCompra';
 
 import { StyledCardLivro, StyledCardButton } from './styles';
-import './card.scss';
 
 function CardLivro({ livro }) {
   return (
@@ -16,10 +15,10 @@ function CardLivro({ livro }) {
           {livro.titulo}
         </h3>
         <p className="preco">{padronizaPreco(livro.preco)}</p>
+        
         <StyledCardButton to={`/produto/${livro.id_livro}`}>
           Saiba mais
         </StyledCardButton>
-
         <ButtonCompra livro={livro} />
       </figcaption>
     </StyledCardLivro>

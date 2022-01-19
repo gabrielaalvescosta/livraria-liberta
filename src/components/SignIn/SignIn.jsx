@@ -1,15 +1,19 @@
 import React, { useContext, useState } from 'react';
 
-import { Context } from '../../context/AuthContext';
+import { Link } from 'react-router-dom';
+
+import { AuthContext } from '../../context/AuthContext';
 
 import { BoxLogin } from './styles';
 import { Button, ButtonLink } from '../Button/Button';
 import { Subtitulo } from '../Headings/styles';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import './signin.scss'
 
 function SignIn() {
-  const { handleLogin } = useContext(Context);
+  const { handleLogin } = useContext(AuthContext);
   const [dados, setDados] = useState({
     email: '',
     senha: '',
@@ -55,10 +59,11 @@ function SignIn() {
             required
             onChange={handleInputChange}
           />
-          {/*
-            Por enquanto sem confirmação de senha
-            <p className="paragrafo">Esqueci minha senha</p>
-          */}
+          
+          <Link className="paragrafo" to="/recuperar-senha">
+            <FontAwesomeIcon icon={faArrowRight} /> Esqueci minha senha
+          </Link>
+          
           <Button azul type='submit'>Entrar</Button>
         </form>
       </div>

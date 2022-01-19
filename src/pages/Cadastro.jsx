@@ -5,14 +5,13 @@ import { toast } from 'react-toastify';
 
 import toastOptions from '../utils/toastOptions';
 import verificaSenha from '../utils/verificaSenha';
+
 import { Input, LabelInput } from '../components/Input/Input';
 import { Button } from '../components/Button/Button';
 import { BoxCadastro } from '../components/SignIn/styles';
 import { Main } from '../components/Main/styles';
 import { Titulo, Barra } from '../components/Headings/styles';
 import { criaUsuario } from '../services/usuarioApi';
-
-import 'react-toastify/dist/ReactToastify.min.css';
 
 import '../components/SignIn/signin.scss';
 
@@ -34,7 +33,7 @@ function Cadastro() {
       setConfirmaSenha(input.value);
     } else {
       setData({
-        ...data, [event.target.name]: event.target.value,
+        ...data, [input.name]: input.value,
       });
     }
   }
@@ -79,7 +78,7 @@ function Cadastro() {
       <Titulo>Cadastro</Titulo>
       <Barra/>
       <BoxCadastro>
-        <form onSubmit={handleSubmit} className="cadastro">
+        <form onSubmit={handleSubmit}>
           <Input
             className="form" name="CPF" type="text" placeholder="CPF 00000000000" required
             onChange={handleOnChange}
