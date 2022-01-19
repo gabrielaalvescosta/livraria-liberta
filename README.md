@@ -65,7 +65,7 @@ npm start
 
 ### Para fazer
 
-- [ ] Página de recuperação de senha
+- [x] Página de recuperação de senha
 - [ ] Página para checkout do pagamento
 
 
