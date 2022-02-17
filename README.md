@@ -31,6 +31,8 @@ Essas são algumas das bibliotecas e frameworks utilizadas no projeto.
 - [axios](https://www.npmjs.com/package/axios)
 - [node-sass](https://www.npmjs.com/package/node-sass)
 
+### UI/UX e Design do Projeto
+A parte UI/UX deste projeto foi realizada por [Gabriela Costa](https://github.com/gabrielaalvescosta) e você pode conferir o projeto (realizado em Adobe Photoshop CC e passado posteriormente para o Figma) [clicando neste link](https://www.figma.com/file/K2xd8ApFTccZpZau0pXr5B/PROJETO-FINAL-RESILIA-M%C3%93DULO-5).
 
 ## Rodar localmente
 
